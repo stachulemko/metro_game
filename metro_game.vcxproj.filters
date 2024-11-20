@@ -27,16 +27,22 @@
     <ClCompile Include="main_game\scenes\scene1_end_of_the_world.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_game\layres\back_ground\scene1_end_of_the_world_background.cpp">
+    <ClCompile Include="main_game\layers\back_ground\scene1_end_of_the_world_background.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main_game\game_menager\window_scale.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_game\layres\back_ground\moving_background.cpp">
+    <ClCompile Include="main_game\layers\back_ground\moving_background.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main_game\mechanics\moving_main_character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_game\game_menager\TimeManager1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_game\game_menager\TimeManager1.h">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -52,13 +58,13 @@
     <ClInclude Include="main_game\game_menager\game_scene1_menager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main_game\layres\back_ground\scene1_end_of_the_world_background.h">
+    <ClInclude Include="main_game\layers\back_ground\scene1_end_of_the_world_background.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\game_menager\window_scale.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main_game\layres\back_ground\moving_background.h">
+    <ClInclude Include="main_game\layers\back_ground\moving_background.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\mechanics\moving_main_character.h">

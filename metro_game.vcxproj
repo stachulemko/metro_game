@@ -21,10 +21,12 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="main_game\game.cpp" />
+    <ClCompile Include="main_game\game_menager\TimeManager1.cpp" />
+    <ClCompile Include="main_game\game_menager\TimeManager1.h" />
     <ClCompile Include="main_game\game_menager\window_scale.cpp" />
     <ClCompile Include="main_game\game_menager\game_scene1_menager.cpp" />
-    <ClCompile Include="main_game\layres\back_ground\moving_background.cpp" />
-    <ClCompile Include="main_game\layres\back_ground\scene1_end_of_the_world_background.cpp" />
+    <ClCompile Include="main_game\layers\back_ground\moving_background.cpp" />
+    <ClCompile Include="main_game\layers\back_ground\scene1_end_of_the_world_background.cpp" />
     <ClCompile Include="main_game\mechanics\moving_main_character.cpp" />
     <ClCompile Include="main_game\scenes\scene1_end_of_the_world.cpp" />
   </ItemGroup>
@@ -35,8 +37,8 @@
     <ClInclude Include="main_game\game.h" />
     <ClInclude Include="main_game\game_menager\window_scale.h" />
     <ClInclude Include="main_game\game_menager\game_scene1_menager.h" />
-    <ClInclude Include="main_game\layres\back_ground\moving_background.h" />
-    <ClInclude Include="main_game\layres\back_ground\scene1_end_of_the_world_background.h" />
+    <ClInclude Include="main_game\layers\back_ground\moving_background.h" />
+    <ClInclude Include="main_game\layers\back_ground\scene1_end_of_the_world_background.h" />
     <ClInclude Include="main_game\mechanics\moving_main_character.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

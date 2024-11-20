@@ -1,6 +1,7 @@
 #include "moving_background.h"
 
-MovingBackground::MovingBackground(float main_character_speed, float window_width, float window_height, string back_ground_adress) {
+MovingBackground::MovingBackground(float main_character_speed, float window_width, float window_height, string back_ground_adress, float textureWidth) {
+    this->textureWidth = textureWidth;
     //speed = main_character_speed;
     this->window_width = window_width;
     this->window_height = window_height;
@@ -15,18 +16,23 @@ MovingBackground::MovingBackground(float main_character_speed, float window_widt
 }
 
 void MovingBackground::update() {
-    float deltaTime = clock.restart().asSeconds();
     //cout << backgroundOffsetX << endl;
+	TimeManager1& timeManager = TimeManager1::getInstance();
+    float deltaTime = timeManager.getDeltaTime();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && backgroudX > -max_pos) {
+        cout << "deltaTime: " << deltaTime << endl;
+        cout << "playerspeed" << speed << endl;
         step = speed * deltaTime;
         if (backgroudX - step > -max_pos) {
             backgroundOffsetX -= step;
             backgroudX -= step;
+            cout << "step" << step << endl;
+            cout << "backgroudX" << backgroudX << endl;
         }
         else {
             cout << "block" << endl;
         }
-        cout << backgroudX << endl;
+        //cout << backgroudX << endl;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && backgroudX < max_pos) {
         step = speed * deltaTime;
@@ -39,7 +45,7 @@ void MovingBackground::update() {
         }
         cout << backgroudX << endl;
     }
-	cout <<"delta time" << deltaTime << endl;
+	//cout <<"delta time" << deltaTime << endl;
     if (backgroundOffsetX <= -textureWidth) {
         backgroundOffsetX += textureWidth;
     }

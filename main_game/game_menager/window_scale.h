@@ -4,7 +4,9 @@ class WindowScale {
 private:
 	float width;
 	float height;
+	
 public:
 	WindowScale(float width, float height);
+	//void _updateViewPos();
 	sf::Vector2f get_scale(sf::RenderWindow& window);
 };

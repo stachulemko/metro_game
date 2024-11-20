@@ -1,12 +1,16 @@
 #include "main_game/game.h"
+#include "main_game/game_menager/TimeManager1.h"
 using namespace std; 
+//TimeManager* TimeManager::instance = nullptr;
 int main()
 {
     Game game;
-       
+    sf::View view;
     //while (isRunning)
+    TimeManager1& timeManager = TimeManager1::getInstance();
     while (game.getWindow().isOpen())
     {
+        timeManager.update();
         game.processEvents();
         game.update();
         game.render();

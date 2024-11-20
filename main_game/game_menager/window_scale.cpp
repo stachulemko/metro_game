@@ -10,3 +10,30 @@ sf::Vector2f WindowScale::get_scale(sf::RenderWindow& window) {
 	sf::Vector2f scale = { scaleX, scaleY };
 	return scale;
 }
+/*
+void WindowScale::_updateViewPos() {
+    // Ustaw sta³e wymiary widoku (dopasowane do t³a)
+    const sf::Vector2f fixedSize(1080.f, 958.f);
+
+    // Tworzymy widok o sta³ych wymiarach
+    _view.setSize(fixedSize);
+
+    // Centrujemy widok na œrodku ekranu lub na graczu
+    _view.setCenter(_player.getPosition().x, fixedSize.y / 2);
+
+    // Dopasowanie widoku, aby nie wychodzi³ poza granice t³a
+    if (_view.getCenter().x < fixedSize.x / 2) {
+        _view.setCenter(fixedSize.x / 2, _view.getCenter().y);
+    }
+    else if (_view.getCenter().x > _background.getTextureRect().width - (fixedSize.x / 2)) {
+        _view.setCenter(_background.getTextureRect().width - (fixedSize.x / 2), _view.getCenter().y);
+    }
+
+    // Zastosuj widok do okna
+    _window.setView(_view);
+
+    // Aktualizacja tekstów (jeœli potrzebne)
+    _updateTextPos();
+
+}
+*/

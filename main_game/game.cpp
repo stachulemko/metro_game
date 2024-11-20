@@ -6,9 +6,9 @@ void Game::update() {
 	scene1_menager.update();
 }
 
-Game::Game() : scene1_menager(200, 800, 600, "C:\\Users\\KêpkaStanis³aw\\Downloads\\pixel_art_subway.png") {
+Game::Game() : scene1_menager(200, 800, 600, "C:\\Users\\KêpkaStanis³aw\\Downloads\\pixel_art_subway.png",1185) {
 	// Inicjalizacja okna
-	window.create(sf::VideoMode(800, 600), "Game Window");
+	window.create(sf::VideoMode(800, 600), "Metro Game");
 }
 void Game::render() {
 	window.clear();
