@@ -3,6 +3,9 @@ WindowScale::WindowScale(float width, float height) {
 	this->width = width;
 	this->height = height;
 }
+WindowScale::WindowScale() {
+
+}
 sf::Vector2f WindowScale::get_scale(sf::RenderWindow& window) {
 
 	float scaleX = (float)window.getSize().x / width;
@@ -10,6 +13,11 @@ sf::Vector2f WindowScale::get_scale(sf::RenderWindow& window) {
 	sf::Vector2f scale = { scaleX, scaleY };
 	return scale;
 }
+sf::Vector2f WindowScale::scaleToFit(const sf::Vector2f& imageSize, const sf::Vector2f& windowSize) {
+    float scale = std::min(windowSize.x / imageSize.x, windowSize.y / imageSize.y);
+    return sf::Vector2f(imageSize.x * scale, imageSize.y * scale);
+}
+
 /*
 void WindowScale::_updateViewPos() {
     // Ustaw sta³e wymiary widoku (dopasowane do t³a)

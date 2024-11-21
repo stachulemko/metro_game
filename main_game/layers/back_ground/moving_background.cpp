@@ -20,17 +20,17 @@ void MovingBackground::update() {
 	TimeManager1& timeManager = TimeManager1::getInstance();
     float deltaTime = timeManager.getDeltaTime();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && backgroudX > -max_pos) {
-        cout << "deltaTime: " << deltaTime << endl;
-        cout << "playerspeed" << speed << endl;
+        //cout << "deltaTime: " << deltaTime << endl;
+        //cout << "playerspeed" << speed << endl;
         step = speed * deltaTime;
         if (backgroudX - step > -max_pos) {
             backgroundOffsetX -= step;
             backgroudX -= step;
-            cout << "step" << step << endl;
-            cout << "backgroudX" << backgroudX << endl;
+            //cout << "step" << step << endl;
+            //cout << "backgroudX" << backgroudX << endl;
         }
         else {
-            cout << "block" << endl;
+            //cout << "block" << endl;
         }
         //cout << backgroudX << endl;
     }
