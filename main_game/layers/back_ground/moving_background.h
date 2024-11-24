@@ -14,12 +14,13 @@ private:
 	float window_width=800;
 	float window_height=600;
 	Mechanics_main_character main_character;
+
 	//-------------------------------------------
 	//int maxShifts = 6;
 	sf::Texture backgroundTexture;
 	//const float playerSpeed = 200.0f;
 	// Prêdkoœæ ruchu gracza
-	const float speed = 200.0f;
+	const float speed = 100.0f;
 	float backgroundOffsetX = 0;
 	float backgroudX = 0;
 	// Ustal wymiary tekstury t³a

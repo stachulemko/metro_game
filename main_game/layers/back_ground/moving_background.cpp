@@ -18,8 +18,9 @@ MovingBackground::MovingBackground(float main_character_speed, float window_widt
 void MovingBackground::update() {
     //cout << backgroundOffsetX << endl;
 	TimeManager1& timeManager = TimeManager1::getInstance();
+    //cout <<"niger ::" << texture.getSize().x << texture.getSize().y << endl;
     float deltaTime = timeManager.getDeltaTime();
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && backgroudX > -max_pos) {
+    if (main_character.movingisKeyPressedRight() && backgroudX > -max_pos) {
         //cout << "deltaTime: " << deltaTime << endl;
         //cout << "playerspeed" << speed << endl;
         step = speed * deltaTime;
@@ -34,7 +35,7 @@ void MovingBackground::update() {
         }
         //cout << backgroudX << endl;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && backgroudX < max_pos) {
+    if (main_character.movingisKeyPressedLeft() && backgroudX < max_pos) {
         step = speed * deltaTime;
         if (backgroudX + step < max_pos) {
             backgroundOffsetX += step;
@@ -52,6 +53,8 @@ void MovingBackground::update() {
     if (backgroundOffsetX >= textureWidth) {
         backgroundOffsetX -= textureWidth;
     }
+   std::cout << "deltaTime: " << deltaTime << ", step: " << step << ", backgroudX: " << backgroudX << std::endl;
+
     //window.clear();
     backgroundSprite1.setPosition(backgroundOffsetX, 0);
     backgroundSprite2.setPosition(backgroundOffsetX + textureWidth, 0);

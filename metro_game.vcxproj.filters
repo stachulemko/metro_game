@@ -45,6 +45,9 @@
     <ClCompile Include="main_game\game_menager\TimeManager1.h">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_game\entietes\main_character_artem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="map.png">
@@ -68,6 +71,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\mechanics\moving_main_character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\entietes\main_character_artem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
