@@ -6,4 +6,5 @@ private:
 public:
 	bool movingisKeyPressedRight();
 	bool movingisKeyPressedLeft();
+	bool noKeyPressed();
 };

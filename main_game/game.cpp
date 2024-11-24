@@ -8,6 +8,7 @@ void Game::update() {
 
 Game::Game() : scene1_menager(200, 800, 600, "C:\\Users\\KêpkaStanis³aw\\Downloads\\pixel_art_subway.png",1185) {
 	// Inicjalizacja okna
+	cout << "niger3" << endl;
 	window_scale = WindowScale();
 	window.create(sf::VideoMode(1185, 600), "Metro Game");
 }
@@ -18,6 +19,7 @@ void Game::render() {
 }
 void Game::processEvents() {
 	sf::Event event;
+	//cout << "niger3" << endl;
 	while (window.pollEvent(event)) {
 		if (event.type == sf::Event::Closed) {
 			window.close();

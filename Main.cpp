@@ -4,7 +4,9 @@ using namespace std;
 //TimeManager* TimeManager::instance = nullptr;
 int main()
 {
+    cout << "niger" << endl;
     Game game;
+    cout << "niger2" << endl;
     sf::View view;
     //while (isRunning)
     TimeManager1& timeManager = TimeManager1::getInstance();

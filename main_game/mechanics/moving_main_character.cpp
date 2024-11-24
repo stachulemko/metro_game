@@ -15,3 +15,11 @@ bool  Mechanics_main_character::movingisKeyPressedLeft() {
 		return false;
 	}
 }
+bool Mechanics_main_character::noKeyPressed() {
+	for (int key = sf::Keyboard::A; key <= sf::Keyboard::KeyCount; ++key) {
+		if (sf::Keyboard::isKeyPressed(static_cast<sf::Keyboard::Key>(key))) {
+			return false; 
+		}
+	}
+	return true; 
+}

@@ -11,5 +11,6 @@ void Game_scene1_menager::update() {
 
 void Game_scene1_menager::render(sf::RenderWindow& window) {
     main_character.render(window);
+
 }
 

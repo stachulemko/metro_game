@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\mechanics\moving_main_character.h>
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\game_menager\TimeManager1.h>
+#include <C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\main_character_artem.h>
 #include<iostream>
 #include <vector>
 #include<string>
@@ -14,7 +15,7 @@ private:
 	float window_width=800;
 	float window_height=600;
 	Mechanics_main_character main_character;
-
+	Main_character_artem artem;
 	//-------------------------------------------
 	//int maxShifts = 6;
 	sf::Texture backgroundTexture;
