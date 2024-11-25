@@ -4,7 +4,7 @@ class  Mechanics_main_character {
 private:
 	
 public:
-	bool movingisKeyPressedRight();
-	bool movingisKeyPressedLeft();
+	bool movingisKeyPressedD();
+	bool movingisKeyPressedA();
 	bool noKeyPressed();
 };

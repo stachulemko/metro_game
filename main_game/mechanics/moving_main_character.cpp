@@ -1,5 +1,5 @@
 	#include "moving_main_character.h"
-bool Mechanics_main_character::movingisKeyPressedRight() {
+bool Mechanics_main_character::movingisKeyPressedD() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) ) {
 		return true;
 	}
@@ -7,7 +7,7 @@ bool Mechanics_main_character::movingisKeyPressedRight() {
 		return false;
 	}
 }
-bool  Mechanics_main_character::movingisKeyPressedLeft() {
+bool  Mechanics_main_character::movingisKeyPressedA() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		return true;
 	}

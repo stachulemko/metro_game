@@ -49,7 +49,7 @@ void Main_character_artem::right_move() {
         clock.restart();
         currentFrame += 1;
     }
-    cout << "moveSprites ---------- " << moveSprites.size() << endl;
+    //cout << "moveSprites ---------- " << moveSprites.size() << endl;
 }
 void Main_character_artem::left_move() {
     deltaTime = clock.getElapsedTime();
@@ -77,5 +77,5 @@ void Main_character_artem::render(sf::RenderWindow& window) {
 }
 void Main_character_artem::update() {
 	sprite_tmp.setPosition(400, 470);
-    cout << "Pozycja postaci: (" << sprite_tmp.getPosition().x << ", " << sprite_tmp.getPosition().y << ")" << endl;
+    //cout << "Pozycja postaci: (" << sprite_tmp.getPosition().x << ", " << sprite_tmp.getPosition().y << ")" << endl;
 }

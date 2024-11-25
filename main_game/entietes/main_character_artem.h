@@ -36,7 +36,7 @@ public:
 	void render(sf::RenderWindow& window);
 	void update();
 	void get_time() {
-		cout <<"negro : " << deltaTime.asSeconds() << endl;
+		//cout <<"negro : " << deltaTime.asSeconds() << endl;
 	}
 
 

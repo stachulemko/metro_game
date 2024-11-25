@@ -21,7 +21,7 @@ void MovingBackground::update() {
     //cout <<"niger ::" << texture.getSize().x << texture.getSize().y << endl;
     artem.get_time();
     float deltaTime = timeManager.getDeltaTime();
-    if (main_character.movingisKeyPressedRight() && backgroudX > -max_pos) {
+    if (main_character.movingisKeyPressedD() && backgroudX > -max_pos) {
         //cout << "deltaTime: " << deltaTime << endl;
         //cout << "playerspeed" << speed << endl;
         step = speed * deltaTime;
@@ -36,7 +36,7 @@ void MovingBackground::update() {
 		}
 		artem.right_move();
     }
-    if (main_character.movingisKeyPressedLeft() && backgroudX < max_pos) {
+    if (main_character.movingisKeyPressedA() && backgroudX < max_pos) {
         step = speed * deltaTime;
         if (backgroudX + step < max_pos) {
             backgroundOffsetX += step;

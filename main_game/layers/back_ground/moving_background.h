@@ -11,20 +11,14 @@ class MovingBackground {
 private:
 	
 	sf::Texture texture;
-	//float speed;
 	float window_width=800;
 	float window_height=600;
 	Mechanics_main_character main_character;
 	Main_character_artem artem;
-	//-------------------------------------------
-	//int maxShifts = 6;
 	sf::Texture backgroundTexture;
-	//const float playerSpeed = 200.0f;
-	// Prêdkoœæ ruchu gracza
-	const float speed = 100.0f;
+	const float speed = 70.0f;
 	float backgroundOffsetX = 0;
 	float backgroudX = 0;
-	// Ustal wymiary tekstury t³a
 	float textureWidth = 1185;
 	int max_pos = 4 * textureWidth;
 	float step = 0;
