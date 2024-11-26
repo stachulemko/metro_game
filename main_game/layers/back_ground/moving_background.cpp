@@ -99,7 +99,7 @@ void MovingBackground::update() {
         else {
             artem.noneOfThem();
         }
-		if (main_character.isRightMousePressed()) {
+		if (main_character.isRightMousePressed() and main_character.isLeftMousePressed()==false) {
             artem.stand_run_shoting2();
 		}
         
