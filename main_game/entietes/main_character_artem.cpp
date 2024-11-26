@@ -15,7 +15,44 @@ Main_character_artem::Main_character_artem() {
     //---------------------------------
     shotingSpritesShoting1.resize(4);
 	calculate_position_points(positions_shoting1, shoting1_points, upper_right_difference_x, upper_right_difference_y);
+    
 	set_sprites_texture(shotingSpritesShoting1, all_basic_artem, shoting1_points, next_x, next_y, 10, 0);
+    //---------------------------------
+	shotingSpritesShoting2.resize(4);
+    cout << "============================" << endl;
+	calculate_position_points(positions_shoting2, shoting2_points, upper_right_difference_x, upper_right_difference_y);
+    for (int i = 0; i < shoting2_points.size(); i++) {
+		cout << shoting2_points[i][0] << " " << shoting2_points[i][1] << endl;
+    }
+	cout << "============================" << endl;
+	set_sprites_texture(shotingSpritesShoting2, all_basic_artem, shoting2_points, next_x_shot2, next_y_shot2, 20, 0);
+    //---------------------------------
+    set_point(shoting2_point,59 ,661);
+	set_sprite(sprite_shoting_2, all_basic_artem, shoting2_point);
+	//---------------------------------
+	//cout << "moveSprites ---------- " << moveSprites.size() << endl;
+	//cout << "runningSprites ---------- " << runningSprites.size() << endl;
+	//cout << "shotingSpritesShoting1 ---------- " << shotingSpritesShoting1.size() << endl;
+	//cout << "shotingSpritesShoting2 ---------- " << shotingSpritesShoting2.size() << endl;
+	//cout << "moveSprites ---------- " << moveSprites.size() << endl;
+	//cout << "runningSprites ---------- " << runningSprites.size() << endl;
+	//cout << "shotingSpritesShoting1 ---------- " << shotingSpritesShoting1.size() << endl;
+	//cout << "shotingSpritesShoting2 ---------- " << shotingSpritesShoting2.size() << endl;
+	//cout << "moveSprites ---------- " << moveSprites.size() << endl;
+	//cout << "runningSprites ---------- " << runningSprites.size() << endl;
+	//cout << "shotingSpritesShoting1 ---------- " << shotingSpritesShoting1.size() << endl;
+	//cout << "shotingSpritesShoting2 ---------- " << shotingSpritesShoting2.size() << endl;
+	//cout << "moveSprites ---------- " << moveSprites.size() << endl;
+	//cout << "runningSprites ---------- " << runningSprites.size() << endl;
+	//cout << "shotingSpritesShoting1 ---------- " << shotingSpritesShoting1.size() << endl;
+	//cout << "shotingSpritesShoting2 ---------- " << shotingSpritesShoting2.size() << endl;
+	//cout << "moveSprites ---------- " << moveSprites.size() << endl;
+	//cout << "runningSprites ---------- " << runningSprites.size() << endl;
+	//cout << "shotingSpritesShoting1 ---------- " << shotingSpritesShoting1.size() << endl;
+	//cout << "shotingSpritesShoting2 ---------- " << shotingSpritesShoting2.size() << endl;
+	//cout << "moveSprites ---------- " << moveSprites.size() << endl;
+	//cout << "runningSprites ---------- " << runningSprites.size() << endl;
+	//cout << "shotingSpritesSh
 }
 void Main_character_artem::calculate_position_points(vector<vector<float>> positions, vector<vector<float>> &points,float upper_right_x,float upper_right_y ) {
     for (int i = 0; i < positions.size(); i++) {
@@ -25,8 +62,8 @@ void Main_character_artem::calculate_position_points(vector<vector<float>> posit
 
 }
 void Main_character_artem::set_point(sf::Vector2f &point, float x, float y) {
-    stayed_point.x = x;
-    stayed_point.y = y;
+    point.x = x;
+    point.y = y;
 }
 void Main_character_artem::load_texture(string path,sf::Texture &texture) {
     if (!texture.loadFromFile(path)) {
@@ -140,4 +177,34 @@ void Main_character_artem::right_shoting1() {
         currentFrame += 1;
     }
 
+}
+void Main_character_artem::right_shoting2() {
+    deltaTime = clock.getElapsedTime();
+    if (deltaTime.asSeconds() > 0.05) {
+        if (currentFrame == 4) {
+            currentFrame = 0;
+        }
+        sprite_tmp = shotingSpritesShoting2[currentFrame];
+        sprite_tmp.setScale(-1, 1); // Obrót w poziomie (odbicie)
+        //facingRight = false;
+        clock.restart();
+        currentFrame += 1;
+    }
+}
+void Main_character_artem::left_shoting2() {
+    deltaTime = clock.getElapsedTime();
+    if (deltaTime.asSeconds() > 0.05) {
+        if (currentFrame == 4) {
+            currentFrame = 0;
+        }
+        sprite_tmp = shotingSpritesShoting2[currentFrame];
+        sprite_tmp.setScale(1, 1); // Patrzy w prawo
+        //facingRight = true;
+        clock.restart();
+        currentFrame += 1;
+    }
+}
+void Main_character_artem::stand_run_shoting2() {
+    sprite_tmp = sprite_shoting_2;
+    sprite_tmp.setScale(facingRight ? 1 : -1, 1); 
 }

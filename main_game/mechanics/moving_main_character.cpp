@@ -32,7 +32,15 @@ bool Mechanics_main_character::isShiftPressed() {
 		return false;
 	}
 }
-bool Mechanics_main_character::isrightMousePressed() {
+bool Mechanics_main_character::isLeftMousePressed() {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+bool Mechanics_main_character::isRightMousePressed() {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
 		return true;
 	}

@@ -18,6 +18,9 @@ private:
 	float next_x_run = 70;
 	float next_y_run = 150;
 	//###################
+	float next_x_shot2 = 120;
+	float next_y_shot2 = 150;
+	//##################
 	bool last_direction = true;
 	int currentFrame = 0;
 	bool facingRight = true;
@@ -25,16 +28,21 @@ private:
 	vector<vector<float>> positions_moves = { {63,194}, {201, 194}, {340, 194}, {478, 194} };
 	vector<vector<float>> positions_running = { {63,363}, {201, 363}, {340, 363}, {478, 363} };
 	vector<vector<float>> positions_shoting1 = { {63,509}, {201, 509}, {340, 509}, {478, 509} };
+	vector<vector<float>> positions_shoting2 = { {63,661}, {201, 661}, {340, 661}, {478, 661} };
 	vector<vector<float>> move_points ;
 	vector<vector<float>> running_points;
 	vector<vector<float>> shoting1_points;
+	vector<vector<float>> shoting2_points;
 	vector<sf::Sprite> moveSprites;
 	vector<sf::Sprite> runningSprites;
 	vector<sf::Sprite> shotingSpritesShoting1;
+	vector<sf::Sprite> shotingSpritesShoting2;
 	//-------------------------------------
 	sf::Vector2f stayed_point;
+	sf::Vector2f shoting2_point;
 	sf::Texture all_basic_artem;
 	sf::Sprite sprite_stand;
+	sf::Sprite sprite_shoting_2;
 	sf::Sprite sprite_tmp;
 	sf::Clock clock;
 	sf::Time deltaTime;
@@ -51,9 +59,12 @@ public:
 	void left_move();
 	void left_run();
 	void right_run();
+	void stand_run_shoting2();
 	void noneOfThem();
 	void left_shoting1();
 	void right_shoting1();
+	void left_shoting2();
+	void right_shoting2();
 	void render(sf::RenderWindow& window);
 	void update();
 	void get_time() {
