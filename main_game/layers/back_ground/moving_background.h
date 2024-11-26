@@ -16,7 +16,7 @@ private:
 	Mechanics_main_character main_character;
 	Main_character_artem artem;
 	sf::Texture backgroundTexture;
-	const float speed = 70.0f;
+	float speed = 70.0f;
 	float backgroundOffsetX = 0;
 	float backgroudX = 0;
 	float textureWidth = 1185;

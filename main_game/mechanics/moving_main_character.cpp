@@ -1,6 +1,6 @@
 	#include "moving_main_character.h"
 bool Mechanics_main_character::movingisKeyPressedD() {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) ) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) ) {
 		return true;
 	}
 	else {
@@ -8,7 +8,7 @@ bool Mechanics_main_character::movingisKeyPressedD() {
 	}
 }
 bool  Mechanics_main_character::movingisKeyPressedA() {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		return true;
 	}
 	else {
@@ -16,10 +16,27 @@ bool  Mechanics_main_character::movingisKeyPressedA() {
 	}
 }
 bool Mechanics_main_character::noKeyPressed() {
-	for (int key = sf::Keyboard::A; key <= sf::Keyboard::KeyCount; ++key) {
-		if (sf::Keyboard::isKeyPressed(static_cast<sf::Keyboard::Key>(key))) {
-			return false; 
-		}
+	if (!sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		return true;
 	}
-	return true; 
+	else {
+		return false;
+	}
+}
+
+bool Mechanics_main_character::isShiftPressed() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+bool Mechanics_main_character::isrightMousePressed() {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }

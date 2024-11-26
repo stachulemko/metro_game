@@ -21,9 +21,14 @@ void MovingBackground::update() {
     //cout <<"niger ::" << texture.getSize().x << texture.getSize().y << endl;
     artem.get_time();
     float deltaTime = timeManager.getDeltaTime();
+    if (main_character.isShiftPressed()) {
+		main_character.set_shift_pressed(true);
+    }
+    //------------------------------------------------------------------
     if (main_character.movingisKeyPressedD() && backgroudX > -max_pos) {
         //cout << "deltaTime: " << deltaTime << endl;
         //cout << "playerspeed" << speed << endl;
+        artem.set_lastDirection(true);
         step = speed * deltaTime;
         if (backgroudX - step > -max_pos) {
             backgroundOffsetX -= step;
@@ -34,9 +39,19 @@ void MovingBackground::update() {
 		else {
 			cout << "block" << endl;
 		}
-		artem.right_move();
+        if (main_character.isShiftPressed()==true) {
+			artem.right_run();
+            speed = 130.0f;
+        }
+        else {
+			speed = 70.0f;
+            artem.right_move();
+        }
+		
     }
+    //------------------------------------------------------------------
     if (main_character.movingisKeyPressedA() && backgroudX < max_pos) {
+        artem.set_lastDirection(false);
         step = speed * deltaTime;
         if (backgroudX + step < max_pos) {
             backgroundOffsetX += step;
@@ -46,10 +61,31 @@ void MovingBackground::update() {
             cout << "block" << endl;
         }
         cout << backgroudX << endl;
-		artem.left_move();
+        if (main_character.isShiftPressed()==true) {
+			cout << "shiftshiftshiftshiftshiftshiftshiftshiftshiftshift" << endl;
+			artem.left_run();
+            speed = 130.0f;
+        }
+        else {
+            speed = 70.0f;
+            artem.left_move();
+        }
+		
     }
+    //------------------------------------------------------------------
 	if (main_character.noKeyPressed()) {
-		artem.noneOfThem();
+        if (main_character.isrightMousePressed()) {
+            if (artem.get_lastDirection() == true) {
+                artem.right_shoting1();
+            }
+            else {
+                artem.left_shoting1();
+            }
+        }
+        else {
+            artem.noneOfThem();
+        }
+		
 	}
 	//cout <<"delta time" << deltaTime << endl;
     if (backgroundOffsetX <= -textureWidth) {
