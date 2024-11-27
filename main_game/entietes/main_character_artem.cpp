@@ -180,26 +180,26 @@ void Main_character_artem::right_shoting1() {
 }
 void Main_character_artem::right_shoting2() {
     deltaTime = clock.getElapsedTime();
-    if (deltaTime.asSeconds() > 0.05) {
+    if (deltaTime.asSeconds() > 0.01) {
         if (currentFrame == 4) {
             currentFrame = 0;
         }
         sprite_tmp = shotingSpritesShoting2[currentFrame];
-        sprite_tmp.setScale(-1, 1); // Obrót w poziomie (odbicie)
-        //facingRight = false;
+        sprite_tmp.setScale(1, 1); // Obrót w poziomie (odbicie)
+        facingRight = true;
         clock.restart();
         currentFrame += 1;
     }
 }
 void Main_character_artem::left_shoting2() {
     deltaTime = clock.getElapsedTime();
-    if (deltaTime.asSeconds() > 0.05) {
+    if (deltaTime.asSeconds() > 0.01) {
         if (currentFrame == 4) {
             currentFrame = 0;
         }
         sprite_tmp = shotingSpritesShoting2[currentFrame];
-        sprite_tmp.setScale(1, 1); // Patrzy w prawo
-        //facingRight = true;
+        sprite_tmp.setScale(-1, 1); // Patrzy w prawo
+        facingRight = false;
         clock.restart();
         currentFrame += 1;
     }

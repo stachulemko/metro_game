@@ -74,37 +74,36 @@ void MovingBackground::update() {
     }
     //------------------------------------------------------------------
 	if (main_character.noKeyPressed()) {
-        if (main_character.isLeftMousePressed()) {
-            if (main_character.isRightMousePressed()) {
-                
+        if (main_character.isLeftMousePressed() and main_character.isRightMousePressed() == false) {
+            if (artem.get_lastDirection() == true) {
+                artem.right_shoting1();
+            }
+            else {
+                artem.left_shoting1();
+            }
+
+        }
+        else if (main_character.isLeftMousePressed() == false and  main_character.isRightMousePressed() == false) {
+            cout << "fuck fuck fuck" << endl;
+            artem.noneOfThem();
+        }
+	}
+    if (main_character.noKeyPressed()) {
+        if (main_character.isRightMousePressed() == true) {
+            if (main_character.isLeftMousePressed() == true) {
+                cout << "gowno" << endl;
                 if (artem.get_lastDirection() == true) {
-                    cout << "negro negro negro negro negro negro negro negro negro negro" << endl;
                     artem.right_shoting2();
                 }
                 else {
-                    cout << "dupa dupa dupa dupa dupa dupa dupa dupa dupa" << endl;
                     artem.left_shoting2();
                 }
             }
-            else {
-                if (artem.get_lastDirection() == true) {
-                    artem.right_shoting1();
-                }
-                else {
-                    artem.left_shoting1();
-                }
-            }
-            
+			else {
+				artem.stand_run_shoting2();
+			}
         }
-        else {
-            artem.noneOfThem();
-        }
-		if (main_character.isRightMousePressed() and main_character.isLeftMousePressed()==false) {
-            artem.stand_run_shoting2();
-		}
-        
-		
-	}
+    }
 
 	//cout <<"delta time" << deltaTime << endl;
     if (backgroundOffsetX <= -textureWidth) {
