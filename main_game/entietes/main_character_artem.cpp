@@ -1,6 +1,7 @@
 #include "main_character_artem.h"
 Main_character_artem::Main_character_artem() {
     //----------------------------------
+    sprite_tmp.setPosition(400, 470);
     moveSprites.resize(4);
     calculate_position_points(positions_moves,move_points,upper_right_difference_x,upper_right_difference_y);
     load_texture("C:\\dev\\dev_c++\\dev_game\\TestGame2\\all6.png", all_basic_artem);
@@ -25,7 +26,7 @@ Main_character_artem::Main_character_artem() {
 		cout << shoting2_points[i][0] << " " << shoting2_points[i][1] << endl;
     }
 	cout << "============================" << endl;
-	set_sprites_texture(shotingSpritesShoting2, all_basic_artem, shoting2_points, next_x_shot2, next_y_shot2, 20, 0);
+	set_sprites_texture(shotingSpritesShoting2, all_basic_artem, shoting2_points, next_x_shot2, next_y_shot2, 40, 0);
     //---------------------------------
     set_point(shoting2_point,59 ,661);
 	set_sprite(sprite_shoting_2, all_basic_artem, shoting2_point);
@@ -76,12 +77,14 @@ void Main_character_artem::set_sprites_texture(vector <sf::Sprite>& sprites, sf:
         sprites[i].setTexture(texture);
         sprites[i].setTextureRect(sf::IntRect(points[i][0], points[i][1], next_x, next_y));
         sprites[i].setOrigin(next_x / 2 - corrections_x, next_y / 2 - corrections_y); // Ustawiamy punkt odniesienia na œrodek
+        sprites[i].setPosition(400, 470);
     }
 }
 void Main_character_artem::set_sprite(sf::Sprite &sprite,sf::Texture &texture, sf::Vector2f point) {
     sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect(point.x - upper_right_difference_x, point.y - upper_right_difference_y, next_x, next_y));
     sprite.setOrigin(next_x / 2 - 10, next_y / 2); // Œrodek jako origin
+    sprite.setPosition(400, 470);
 	
 }
 void Main_character_artem::right_move() {
@@ -148,12 +151,12 @@ void Main_character_artem::render(sf::RenderWindow& window) {
 	window.draw(sprite_tmp);
 }
 void Main_character_artem::update() {
-	sprite_tmp.setPosition(400, 470);
-    //cout << "Pozycja postaci: (" << sprite_tmp.getPosition().x << ", " << sprite_tmp.getPosition().y << ")" << endl;
+	
+    cout << "Pozycja postaci: (" << sprite_tmp.getPosition().x << ", " << sprite_tmp.getPosition().y << ")" << endl;
 }
 void Main_character_artem::left_shoting1() {
     deltaTime = clock.getElapsedTime();
-    if (deltaTime.asSeconds() > 0.05) {
+    if (deltaTime.asSeconds() > 0.03) {
         if (currentFrame == 4) {
             currentFrame = 0;
         }
@@ -166,7 +169,7 @@ void Main_character_artem::left_shoting1() {
 }
 void Main_character_artem::right_shoting1() {
     deltaTime = clock.getElapsedTime();
-    if (deltaTime.asSeconds() > 0.05) {
+    if (deltaTime.asSeconds() > 0.03) {
         if (currentFrame == 4) {
             currentFrame = 0;
         }
@@ -180,7 +183,7 @@ void Main_character_artem::right_shoting1() {
 }
 void Main_character_artem::right_shoting2() {
     deltaTime = clock.getElapsedTime();
-    if (deltaTime.asSeconds() > 0.01) {
+    if (deltaTime.asSeconds() > 0.04) {
         if (currentFrame == 4) {
             currentFrame = 0;
         }
@@ -193,7 +196,7 @@ void Main_character_artem::right_shoting2() {
 }
 void Main_character_artem::left_shoting2() {
     deltaTime = clock.getElapsedTime();
-    if (deltaTime.asSeconds() > 0.01) {
+    if (deltaTime.asSeconds() > 0.04) {
         if (currentFrame == 4) {
             currentFrame = 0;
         }
