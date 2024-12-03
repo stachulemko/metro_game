@@ -5,6 +5,12 @@
 using namespace std;
 class Main_character_artem {
 private:
+	bool isJumping = false;
+	float verticalSpeed = 0.0f;
+	const float gravity = 30.0f; // Wiêksze przyspieszenie grawitacyjne
+	const float jumpSpeed = -300.0f; // Mniejsza prêdkoœæ skoku (wartoœæ ujemna, bo skok jest w górê)
+
+
 	float move_speed = 100.0f;
 	float run_speed = 200.0f;
 	//#################
@@ -24,23 +30,32 @@ private:
 	bool last_direction = true;
 	int currentFrame = 0;
 	bool facingRight = true;
+	// reload 
+	float upper_right_difference_x_relaod = 70;
+	float upper_right_difference_y_reload = 35;
+	float next_x_reload = 140;
+	float next_y_reload = 150;
 	//-------------------------------------
 	vector<vector<float>> positions_moves = { {63,194}, {201, 194}, {340, 194}, {478, 194} };
 	vector<vector<float>> positions_running = { {63,363}, {201, 363}, {340, 363}, {478, 363} };
 	vector<vector<float>> positions_shoting1 = { {63,509}, {201, 509}, {340, 509}, {478, 509} };
 	vector<vector<float>> positions_shoting2 = { {63,661}, {201, 661}, {340, 661}, {478, 661} };
+	vector<vector<float>> positions_reload = { {228,38}, {367, 38}, {505, 38}, {640, 38},{779,38} };
 	vector<vector<float>> move_points ;
 	vector<vector<float>> running_points;
 	vector<vector<float>> shoting1_points;
 	vector<vector<float>> shoting2_points;
+	vector<vector<float>> reload_points;
 	vector<sf::Sprite> moveSprites;
 	vector<sf::Sprite> runningSprites;
 	vector<sf::Sprite> shotingSpritesShoting1;
 	vector<sf::Sprite> shotingSpritesShoting2;
+	vector<sf::Sprite> reload_sprites;
 	//-------------------------------------
 	sf::Vector2f stayed_point;
 	sf::Vector2f shoting2_point;
 	sf::Texture all_basic_artem;
+	sf::Texture all_basic_artem2;
 	sf::Sprite sprite_stand;
 	sf::Sprite sprite_shoting_2;
 	sf::Sprite sprite_tmp;
@@ -77,6 +92,10 @@ public:
 		return last_direction;
 
 	}
+	void jump_update();
+	void jump();
+	void right_reload();
+	void left_reload();
 
 
 };

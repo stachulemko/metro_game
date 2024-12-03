@@ -48,3 +48,20 @@ bool Mechanics_main_character::isRightMousePressed() {
 		return false;
 	}
 }
+bool Mechanics_main_character::get_space_clicked() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+bool Mechanics_main_character::is_r_pressed() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+	
+}

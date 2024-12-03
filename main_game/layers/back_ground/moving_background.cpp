@@ -62,7 +62,7 @@ void MovingBackground::update() {
         }
         cout << backgroudX << endl;
         if (main_character.isShiftPressed()==true) {
-			cout << "shiftshiftshiftshiftshiftshiftshiftshiftshiftshift" << endl;
+			//cout << "shiftshiftshiftshiftshiftshiftshiftshiftshiftshift" << endl;
 			artem.left_run();
             speed = 130.0f;
         }
@@ -83,12 +83,24 @@ void MovingBackground::update() {
             }
 
         }
-        else if (main_character.isLeftMousePressed() == false and  main_character.isRightMousePressed() == false) {
+        else if (main_character.isLeftMousePressed() == false and  main_character.isRightMousePressed() == false and main_character.is_r_pressed()==false) {
             cout << "fuck fuck fuck" << endl;
             artem.noneOfThem();
         }
 	}
     if (main_character.noKeyPressed()) {
+        if (main_character.is_r_pressed()) {
+            if (artem.get_lastDirection() == true) {
+                artem.right_reload();
+            }
+            else {
+                artem.left_reload();
+            }
+        }
+        if (main_character.get_space_clicked()) {
+            artem.jump();
+        }
+        artem.jump_update();
         if (main_character.isRightMousePressed() == true) {
             if (main_character.isLeftMousePressed() == true) {
                 cout << "gowno" << endl;
