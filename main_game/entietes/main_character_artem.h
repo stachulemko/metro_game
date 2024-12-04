@@ -35,17 +35,27 @@ private:
 	float upper_right_difference_y_reload = 35;
 	float next_x_reload = 140;
 	float next_y_reload = 150;
+	// granade
+	float upper_right_difference_granade_x = 70;
+	float upper_right_difference_granade_y = 14;
+	float next_granade_x = 90;
+	float next_granade_y = 100;
 	//-------------------------------------
 	vector<vector<float>> positions_moves = { {63,194}, {201, 194}, {340, 194}, {478, 194} };
 	vector<vector<float>> positions_running = { {63,363}, {201, 363}, {340, 363}, {478, 363} };
 	vector<vector<float>> positions_shoting1 = { {63,509}, {201, 509}, {340, 509}, {478, 509} };
 	vector<vector<float>> positions_shoting2 = { {63,661}, {201, 661}, {340, 661}, {478, 661} };
 	vector<vector<float>> positions_reload = { {228,38}, {367, 38}, {505, 38}, {640, 38},{779,38} };
+	vector<vector<float>> granade_throw = { {226,208}, {365, 208}, {503, 208}, {641, 208},{777,208},{927,208},{1065,208} };
+	//-------------------------------------
 	vector<vector<float>> move_points ;
 	vector<vector<float>> running_points;
 	vector<vector<float>> shoting1_points;
 	vector<vector<float>> shoting2_points;
 	vector<vector<float>> reload_points;
+	vector<vector<float>> granade_points;
+	//-------------------------------------
+	vector<sf::Sprite> granadeSprites;
 	vector<sf::Sprite> moveSprites;
 	vector<sf::Sprite> runningSprites;
 	vector<sf::Sprite> shotingSpritesShoting1;
@@ -96,6 +106,8 @@ public:
 	void jump();
 	void right_reload();
 	void left_reload();
+	void right_granade(bool &was_q_clicked);
+	void left_granade(bool &was_q_clicked);
 
 
 };

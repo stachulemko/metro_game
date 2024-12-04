@@ -21,119 +21,134 @@ void MovingBackground::update() {
     //cout <<"niger ::" << texture.getSize().x << texture.getSize().y << endl;
     artem.get_time();
     float deltaTime = timeManager.getDeltaTime();
-    if (main_character.isShiftPressed()) {
-		main_character.set_shift_pressed(true);
-    }
-    //------------------------------------------------------------------
-    if (main_character.movingisKeyPressedD() && backgroudX > -max_pos) {
-        //cout << "deltaTime: " << deltaTime << endl;
-        //cout << "playerspeed" << speed << endl;
-        artem.set_lastDirection(true);
-        step = speed * deltaTime;
-        if (backgroudX - step > -max_pos) {
-            backgroundOffsetX -= step;
-            backgroudX -= step;
-            //cout << "step" << step << endl;
-            //cout << "backgroudX" << backgroudX << endl;
+    cout << "negro" << endl;
+    if (main_character.get_was_q_pressed() == false) {
+        cout << "false false false false" << endl;
+        if (main_character.isShiftPressed()) {
+            main_character.set_shift_pressed(true);
         }
-		else {
-			cout << "block" << endl;
-		}
-        if (main_character.isShiftPressed()==true) {
-			artem.right_run();
-            speed = 130.0f;
-        }
-        else {
-			speed = 70.0f;
-            artem.right_move();
-        }
-		
-    }
-    //------------------------------------------------------------------
-    if (main_character.movingisKeyPressedA() && backgroudX < max_pos) {
-        artem.set_lastDirection(false);
-        step = speed * deltaTime;
-        if (backgroudX + step < max_pos) {
-            backgroundOffsetX += step;
-            backgroudX += step;
-        }
-        else {
-            cout << "block" << endl;
-        }
-        cout << backgroudX << endl;
-        if (main_character.isShiftPressed()==true) {
-			//cout << "shiftshiftshiftshiftshiftshiftshiftshiftshiftshift" << endl;
-			artem.left_run();
-            speed = 130.0f;
-        }
-        else {
-            speed = 70.0f;
-            artem.left_move();
-        }
-		
-    }
-    //------------------------------------------------------------------
-	if (main_character.noKeyPressed()) {
-        if (main_character.isLeftMousePressed() and main_character.isRightMousePressed() == false) {
-            if (artem.get_lastDirection() == true) {
-                artem.right_shoting1();
+        //------------------------------------------------------------------
+        if (main_character.movingisKeyPressedD() && backgroudX > -max_pos) {
+            //cout << "deltaTime: " << deltaTime << endl;
+            //cout << "playerspeed" << speed << endl;
+            artem.set_lastDirection(true);
+            step = speed * deltaTime;
+            if (backgroudX - step > -max_pos) {
+                backgroundOffsetX -= step;
+                backgroudX -= step;
+                //cout << "step" << step << endl;
+                //cout << "backgroudX" << backgroudX << endl;
             }
             else {
-                artem.left_shoting1();
+                cout << "block" << endl;
+            }
+            if (main_character.isShiftPressed() == true) {
+                artem.right_run();
+                speed = 130.0f;
+            }
+            else {
+                speed = 70.0f;
+                artem.right_move();
             }
 
         }
-        else if (main_character.isLeftMousePressed() == false and  main_character.isRightMousePressed() == false and main_character.is_r_pressed()==false) {
-            cout << "fuck fuck fuck" << endl;
-            artem.noneOfThem();
-        }
-	}
-    if (main_character.noKeyPressed()) {
-        if (main_character.is_r_pressed()) {
-            if (artem.get_lastDirection() == true) {
-                artem.right_reload();
+        //------------------------------------------------------------------
+        if (main_character.movingisKeyPressedA() && backgroudX < max_pos) {
+            artem.set_lastDirection(false);
+            step = speed * deltaTime;
+            if (backgroudX + step < max_pos) {
+                backgroundOffsetX += step;
+                backgroudX += step;
             }
             else {
-                artem.left_reload();
+                cout << "block" << endl;
             }
+            cout << backgroudX << endl;
+            if (main_character.isShiftPressed() == true) {
+                //cout << "shiftshiftshiftshiftshiftshiftshiftshiftshiftshift" << endl;
+                artem.left_run();
+                speed = 130.0f;
+            }
+            else {
+                speed = 70.0f;
+                artem.left_move();
+            }
+
         }
-        if (main_character.get_space_clicked()) {
-            artem.jump();
-        }
-        artem.jump_update();
-        if (main_character.isRightMousePressed() == true) {
-            if (main_character.isLeftMousePressed() == true) {
-                cout << "gowno" << endl;
+        //------------------------------------------------------------------
+        if (main_character.noKeyPressed()) {
+			cout << "zopa1" << endl;
+            if (main_character.is_q_pressed()) {
+                main_character.set_was_q_pressed(true);
+            }
+            if (main_character.isLeftMousePressed() and main_character.isRightMousePressed() == false) {
                 if (artem.get_lastDirection() == true) {
-                    artem.right_shoting2();
+                    artem.right_shoting1();
                 }
                 else {
-                    artem.left_shoting2();
+                    artem.left_shoting1();
+                }
+
+            }
+            else if (main_character.isLeftMousePressed() == false and main_character.isRightMousePressed() == false and main_character.is_r_pressed() == false) {
+                cout << "fuck fuck fuck" << endl;
+                artem.noneOfThem();
+            }
+            
+        }
+        if (main_character.noKeyPressed()) {
+
+            if (main_character.is_r_pressed()) {
+                if (artem.get_lastDirection() == true) {
+                    artem.right_reload();
+                }
+                else {
+                    artem.left_reload();
                 }
             }
-			else {
-				artem.stand_run_shoting2();
-			}
+            if (main_character.get_space_clicked()) {
+                artem.jump();
+            }
+            artem.jump_update();
+            if (main_character.isRightMousePressed() == true) {
+                if (main_character.isLeftMousePressed() == true) {
+                    cout << "gowno" << endl;
+                    if (artem.get_lastDirection() == true) {
+                        artem.right_shoting2();
+                    }
+                    else {
+                        artem.left_shoting2();
+                    }
+                }
+                else {
+                    artem.stand_run_shoting2();
+                }
+            }
         }
     }
-
-	//cout <<"delta time" << deltaTime << endl;
+    else {
+        if (artem.get_lastDirection() == true) {
+            artem.right_granade(main_character.get_was_q_pressed_ref());
+        }
+        else {
+            artem.left_granade(main_character.get_was_q_pressed_ref());
+        }
+    }
+    //cout <<"delta time" << deltaTime << endl;
     if (backgroundOffsetX <= -textureWidth) {
         backgroundOffsetX += textureWidth;
     }
     if (backgroundOffsetX >= textureWidth) {
         backgroundOffsetX -= textureWidth;
     }
-   std::cout << "deltaTime: " << deltaTime << ", step: " << step << ", backgroudX: " << backgroudX << std::endl;
+    std::cout << "deltaTime: " << deltaTime << ", step: " << step << ", backgroudX: " << backgroudX << std::endl;
 
     //window.clear();
     backgroundSprite1.setPosition(backgroundOffsetX, 0);
     backgroundSprite2.setPosition(backgroundOffsetX + textureWidth, 0);
     backgroundSprite3.setPosition(backgroundOffsetX - textureWidth, 0);
     artem.update();
-    
-}
-
+};
 void MovingBackground::render(sf::RenderWindow& window) {
     window.draw(backgroundSprite1);
     window.draw(backgroundSprite2);

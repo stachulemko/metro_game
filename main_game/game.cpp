@@ -4,6 +4,7 @@ using namespace std;
 
 void Game::update() {
 	scene1_menager.update();
+	cout << "zopa" << endl;
 }
 
 Game::Game() : scene1_menager(200, 800, 600, "C:\\Users\\KêpkaStanis³aw\\Downloads\\pixel_art_subway.png",1185) {

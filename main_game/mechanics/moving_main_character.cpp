@@ -65,3 +65,11 @@ bool Mechanics_main_character::is_r_pressed() {
 	}
 	
 }
+bool Mechanics_main_character::is_q_pressed() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}

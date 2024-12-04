@@ -36,6 +36,15 @@ Main_character_artem::Main_character_artem() {
     load_texture("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\artem_movmet2.png", all_basic_artem2);
     calculate_position_points(positions_reload, reload_points, upper_right_difference_x_relaod, upper_right_difference_y_reload);
     set_sprites_texture(reload_sprites, all_basic_artem2, reload_points, next_x_reload, next_y_reload, 10, -20);
+    //granade throw
+	cout << "cwel" << endl;
+    granadeSprites.resize(7);
+    load_texture("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\artem_movmet2.png", all_basic_artem2);
+    calculate_position_points(granade_throw, granade_points, upper_right_difference_granade_x, upper_right_difference_granade_y);
+    
+    set_sprites_texture(granadeSprites, all_basic_artem2, granade_points, next_granade_x, next_granade_y, 10, 0);
+    cout << "cwel2" << endl;
+
 }
 void Main_character_artem::calculate_position_points(vector<vector<float>> positions, vector<vector<float>> &points,float upper_right_x,float upper_right_y ) {
     for (int i = 0; i < positions.size(); i++) {
@@ -241,3 +250,32 @@ void Main_character_artem::left_reload() {
         currentFrame += 1;
     }
 }
+void Main_character_artem::right_granade(bool &was_q_clicked) {
+    deltaTime = clock.getElapsedTime();
+    if (deltaTime.asSeconds() > 0.3) {
+        if (currentFrame == 6) {
+			was_q_clicked = false;
+            currentFrame = 0;
+        }
+        sprite_tmp = granadeSprites[currentFrame];
+        sprite_tmp.setScale(1, 1); // Patrzy w prawo
+        facingRight = true;
+        clock.restart();
+        currentFrame += 1;
+    }
+}
+void Main_character_artem::left_granade(bool &was_q_clicked) {
+    deltaTime = clock.getElapsedTime();
+    if (deltaTime.asSeconds() > 0.3) {
+        if (currentFrame == 6) {
+			was_q_clicked = false;
+            currentFrame = 0;
+        }
+        sprite_tmp = granadeSprites[currentFrame];
+        sprite_tmp.setScale(-1, 1); // Patrzy w prawo
+        facingRight = false;
+        clock.restart();
+        currentFrame += 1;
+    }
+}
+
