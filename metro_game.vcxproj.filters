@@ -48,6 +48,9 @@
     <ClCompile Include="main_game\entietes\main_character_artem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_game\entietes\weapons\granade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="map.png">
@@ -74,6 +77,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\entietes\main_character_artem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\entietes\weapons\granade.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

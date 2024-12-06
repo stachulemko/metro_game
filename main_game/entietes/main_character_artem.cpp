@@ -20,12 +20,12 @@ Main_character_artem::Main_character_artem() {
 	set_sprites_texture(shotingSpritesShoting1, all_basic_artem, shoting1_points, next_x, next_y, 10, 0);
     //---------------------------------
 	shotingSpritesShoting2.resize(4);
-    cout << "============================" << endl;
+    //cout << "============================" << endl;
 	calculate_position_points(positions_shoting2, shoting2_points, upper_right_difference_x, upper_right_difference_y);
     for (int i = 0; i < shoting2_points.size(); i++) {
 		cout << shoting2_points[i][0] << " " << shoting2_points[i][1] << endl;
     }
-	cout << "============================" << endl;
+	//cout << "============================" << endl;
 	set_sprites_texture(shotingSpritesShoting2, all_basic_artem, shoting2_points, next_x_shot2, next_y_shot2, 40, 0);
     //---------------------------------
     set_point(shoting2_point,59 ,661);
@@ -37,13 +37,13 @@ Main_character_artem::Main_character_artem() {
     calculate_position_points(positions_reload, reload_points, upper_right_difference_x_relaod, upper_right_difference_y_reload);
     set_sprites_texture(reload_sprites, all_basic_artem2, reload_points, next_x_reload, next_y_reload, 10, -20);
     //granade throw
-	cout << "cwel" << endl;
+	//cout << "cwel" << endl;
     granadeSprites.resize(7);
-    load_texture("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\artem_movmet2.png", all_basic_artem2);
+    //load_texture("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\artem_movmet2.png", all_basic_artem2);
     calculate_position_points(granade_throw, granade_points, upper_right_difference_granade_x, upper_right_difference_granade_y);
     
     set_sprites_texture(granadeSprites, all_basic_artem2, granade_points, next_granade_x, next_granade_y, 10, 0);
-    cout << "cwel2" << endl;
+    //cout << "cwel2" << endl;
 
 }
 void Main_character_artem::calculate_position_points(vector<vector<float>> positions, vector<vector<float>> &points,float upper_right_x,float upper_right_y ) {
@@ -188,7 +188,7 @@ void Main_character_artem::right_shoting2() {
 }
 void Main_character_artem::left_shoting2() {
     deltaTime = clock.getElapsedTime();
-    if (deltaTime.asSeconds() > 0.04) {
+    if ( deltaTime.asSeconds() > 0.04) {
         if (currentFrame == 4) {
             currentFrame = 0;
         }
@@ -250,12 +250,14 @@ void Main_character_artem::left_reload() {
         currentFrame += 1;
     }
 }
-void Main_character_artem::right_granade(bool &was_q_clicked) {
+void Main_character_artem::right_granade(bool &was_q_clicked, bool& is_throw,sf::Clock &clock) {
     deltaTime = clock.getElapsedTime();
     if (deltaTime.asSeconds() > 0.3) {
         if (currentFrame == 6) {
+            is_throw = true;
 			was_q_clicked = false;
             currentFrame = 0;
+            clock.restart();
         }
         sprite_tmp = granadeSprites[currentFrame];
         sprite_tmp.setScale(1, 1); // Patrzy w prawo
@@ -264,12 +266,14 @@ void Main_character_artem::right_granade(bool &was_q_clicked) {
         currentFrame += 1;
     }
 }
-void Main_character_artem::left_granade(bool &was_q_clicked) {
+void Main_character_artem::left_granade(bool &was_q_clicked,bool &is_throw, sf::Clock& clock) {
     deltaTime = clock.getElapsedTime();
     if (deltaTime.asSeconds() > 0.3) {
         if (currentFrame == 6) {
+            is_throw = true;
 			was_q_clicked = false;
             currentFrame = 0;
+			clock.restart();
         }
         sprite_tmp = granadeSprites[currentFrame];
         sprite_tmp.setScale(-1, 1); // Patrzy w prawo

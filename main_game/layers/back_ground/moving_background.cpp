@@ -17,11 +17,12 @@ MovingBackground::MovingBackground(float main_character_speed, float window_widt
 
 void MovingBackground::update() {
     //cout << backgroundOffsetX << endl;
-	TimeManager1& timeManager = TimeManager1::getInstance();
+    TimeManager1& timeManager = TimeManager1::getInstance();
     //cout <<"niger ::" << texture.getSize().x << texture.getSize().y << endl;
     artem.get_time();
     float deltaTime = timeManager.getDeltaTime();
     cout << "negro" << endl;
+    
     if (main_character.get_was_q_pressed() == false) {
         cout << "false false false false" << endl;
         if (main_character.isShiftPressed()) {
@@ -77,7 +78,7 @@ void MovingBackground::update() {
         }
         //------------------------------------------------------------------
         if (main_character.noKeyPressed()) {
-			cout << "zopa1" << endl;
+            cout << "zopa1" << endl;
             if (main_character.is_q_pressed()) {
                 main_character.set_was_q_pressed(true);
             }
@@ -94,7 +95,7 @@ void MovingBackground::update() {
                 cout << "fuck fuck fuck" << endl;
                 artem.noneOfThem();
             }
-            
+
         }
         if (main_character.noKeyPressed()) {
 
@@ -128,10 +129,23 @@ void MovingBackground::update() {
     }
     else {
         if (artem.get_lastDirection() == true) {
-            artem.right_granade(main_character.get_was_q_pressed_ref());
+            //cout << "right throw" << endl;
+            artem.right_granade(main_character.get_was_q_pressed_ref(), granade.get_is_throw(),granade.get_clock());
+
         }
         else {
-            artem.left_granade(main_character.get_was_q_pressed_ref());
+            //cout << "left throw" << endl;
+            artem.left_granade(main_character.get_was_q_pressed_ref(), granade.get_is_throw(),granade.get_clock());
+        }
+    }
+    if (granade.get_is_throw_value() == true) {
+        if (artem.get_lastDirection() == true) {
+           // cout << "lot granataaaaaaaaaaa" << endl;
+            cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
+			granade.throw_right();
+        }
+        else {
+            granade.throw_left();
         }
     }
     //cout <<"delta time" << deltaTime << endl;
@@ -150,8 +164,10 @@ void MovingBackground::update() {
     artem.update();
 };
 void MovingBackground::render(sf::RenderWindow& window) {
+    
     window.draw(backgroundSprite1);
     window.draw(backgroundSprite2);
     window.draw(backgroundSprite3);
+    granade.render(window);
     artem.render(window);
 }

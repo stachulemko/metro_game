@@ -10,7 +10,6 @@ private:
 	const float gravity = 30.0f; // Wiêksze przyspieszenie grawitacyjne
 	const float jumpSpeed = -300.0f; // Mniejsza prêdkoœæ skoku (wartoœæ ujemna, bo skok jest w górê)
 
-
 	float move_speed = 100.0f;
 	float run_speed = 200.0f;
 	//#################
@@ -106,8 +105,11 @@ public:
 	void jump();
 	void right_reload();
 	void left_reload();
-	void right_granade(bool &was_q_clicked);
-	void left_granade(bool &was_q_clicked);
+	void right_granade(bool& was_q_clicked, bool& is_throw, sf::Clock& clock);
+	void left_granade(bool& was_q_clicked, bool& is_throw, sf::Clock& clock);
+	int get_current_frame() {
+		return currentFrame;
+	}
 
 
 };
