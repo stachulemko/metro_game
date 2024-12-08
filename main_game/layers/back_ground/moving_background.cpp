@@ -18,6 +18,9 @@ MovingBackground::MovingBackground(float main_character_speed, float window_widt
 void MovingBackground::update() {
     //cout << backgroundOffsetX << endl;
     TimeManager1& timeManager = TimeManager1::getInstance();
+    cout << "---------------------------------------------" << endl;
+	cout << "backgroundOffsetX: " << backgroundOffsetX << endl;
+    cout << "---------------------------------------------" << endl;
     //cout <<"niger ::" << texture.getSize().x << texture.getSize().y << endl;
     artem.get_time();
     float deltaTime = timeManager.getDeltaTime();
@@ -130,22 +133,70 @@ void MovingBackground::update() {
     else {
         if (artem.get_lastDirection() == true) {
             //cout << "right throw" << endl;
+			granade.set_Last_direction(true);
             artem.right_granade(main_character.get_was_q_pressed_ref(), granade.get_is_throw(),granade.get_clock());
 
         }
         else {
             //cout << "left throw" << endl;
+			granade.set_Last_direction(false);
             artem.left_granade(main_character.get_was_q_pressed_ref(), granade.get_is_throw(),granade.get_clock());
         }
     }
     if (granade.get_is_throw_value() == true) {
-        if (artem.get_lastDirection() == true) {
+        
+        if (granade.get_Last_direction()==true) {
+
+            if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == false) {
+               
+                granade.throw_right(-1,backgroundOffsetX);
+            }
+			else if (main_character.movingisKeyPressedA() == true and main_character.movingisKeyPressedD() == false and main_character.isShiftPressed() == false) {
+                //cout << "adsadsadasdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" << endl;
+				granade.throw_right(230,backgroundOffsetX);
+			}
+            else if (main_character.movingisKeyPressedA() == true and main_character.movingisKeyPressedD() == false and main_character.isShiftPressed() == true) {
+                cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
+                granade.throw_right(300,backgroundOffsetX);
+            }
+            else if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD()==true and main_character.isShiftPressed() == false) {
+                granade.throw_right(150,backgroundOffsetX);
+            }
+            else if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == true and main_character.isShiftPressed()==true) {
+               
+                granade.throw_right(130,backgroundOffsetX);
+            }
+            else {
+                //cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
+				granade.throw_right(-1,backgroundOffsetX);
+            }
            // cout << "lot granataaaaaaaaaaa" << endl;
-            cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
-			granade.throw_right();
+            //cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
         }
-        else {
-            granade.throw_left();
+        else if(granade.get_Last_direction()==false) {
+            if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == false) {
+
+                granade.throw_left(-1, backgroundOffsetX);
+            }
+            else if (main_character.movingisKeyPressedA() == true and main_character.movingisKeyPressedD() == false and main_character.isShiftPressed() == false) {
+                //cout << "adsadsadasdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" << endl;
+                granade.throw_left(150, backgroundOffsetX);
+            }
+            else if (main_character.movingisKeyPressedA() == true and main_character.movingisKeyPressedD() == false and main_character.isShiftPressed() == true) {
+                cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
+                granade.throw_left(130, backgroundOffsetX);
+            }
+            else if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == true and main_character.isShiftPressed() == false) {
+                granade.throw_left(230, backgroundOffsetX);
+            }
+            else if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == true and main_character.isShiftPressed() == true) {
+
+                granade.throw_left(300, backgroundOffsetX);
+            }
+            else {
+                //cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
+                granade.throw_left(-1, backgroundOffsetX);
+            }
         }
     }
     //cout <<"delta time" << deltaTime << endl;
@@ -170,4 +221,5 @@ void MovingBackground::render(sf::RenderWindow& window) {
     window.draw(backgroundSprite3);
     granade.render(window);
     artem.render(window);
+	//granade.render(window);
 }

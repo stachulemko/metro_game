@@ -144,7 +144,7 @@ void Main_character_artem::render(sf::RenderWindow& window) {
 void Main_character_artem::update() {
 	//jump_update();
     //
-    //cout << "Pozycja postaci: (" << sprite_tmp.getPosition().x << ", " << sprite_tmp.getPosition().y << ")" << endl;
+    cout << "Pozycja postaci: (" << sprite_tmp.getPosition().x << ", " << sprite_tmp.getPosition().y << ")" << endl;
 }
 void Main_character_artem::left_shoting1() {
     deltaTime = clock.getElapsedTime();
