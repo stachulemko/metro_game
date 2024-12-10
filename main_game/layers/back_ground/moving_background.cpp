@@ -19,14 +19,15 @@ void MovingBackground::update() {
     //cout << backgroundOffsetX << endl;
     TimeManager1& timeManager = TimeManager1::getInstance();
     cout << "---------------------------------------------" << endl;
-	cout << "backgroundOffsetX: " << backgroundOffsetX << endl;
+	cout << "backgroundOffsetX: " << backgroudX << endl;
     cout << "---------------------------------------------" << endl;
+    back_x_test = backgroudX;
     //cout <<"niger ::" << texture.getSize().x << texture.getSize().y << endl;
     artem.get_time();
     float deltaTime = timeManager.getDeltaTime();
     cout << "negro" << endl;
     
-    if (main_character.get_was_q_pressed() == false) {
+    if (main_character.get_was_q_pressed() == false ) {
         cout << "false false false false" << endl;
         if (main_character.isShiftPressed()) {
             main_character.set_shift_pressed(true);
@@ -82,7 +83,7 @@ void MovingBackground::update() {
         //------------------------------------------------------------------
         if (main_character.noKeyPressed()) {
             cout << "zopa1" << endl;
-            if (main_character.is_q_pressed()) {
+            if (main_character.is_q_pressed() and granade.get_is_throw()==false) {
                 main_character.set_was_q_pressed(true);
             }
             if (main_character.isLeftMousePressed() and main_character.isRightMousePressed() == false) {
@@ -130,7 +131,8 @@ void MovingBackground::update() {
             }
         }
     }
-    else {
+    else if(main_character.get_was_q_pressed() == true and granade.get_is_throw()==false) {
+		cout << "nigerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrer" << endl;
         if (artem.get_lastDirection() == true) {
             //cout << "right throw" << endl;
 			granade.set_Last_direction(true);
@@ -144,31 +146,30 @@ void MovingBackground::update() {
         }
     }
     if (granade.get_is_throw_value() == true) {
-        
         if (granade.get_Last_direction()==true) {
 
             if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == false) {
                
-                granade.throw_right(-1,backgroundOffsetX);
+                granade.throw_right(-1, back_x_test);
             }
 			else if (main_character.movingisKeyPressedA() == true and main_character.movingisKeyPressedD() == false and main_character.isShiftPressed() == false) {
                 //cout << "adsadsadasdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" << endl;
-				granade.throw_right(230,backgroundOffsetX);
+				granade.throw_right(230, back_x_test);
 			}
             else if (main_character.movingisKeyPressedA() == true and main_character.movingisKeyPressedD() == false and main_character.isShiftPressed() == true) {
-                cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
-                granade.throw_right(300,backgroundOffsetX);
+                //cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
+                granade.throw_right(300, back_x_test);
             }
             else if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD()==true and main_character.isShiftPressed() == false) {
-                granade.throw_right(150,backgroundOffsetX);
+                granade.throw_right(150, back_x_test);
             }
             else if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == true and main_character.isShiftPressed()==true) {
                
-                granade.throw_right(130,backgroundOffsetX);
+                granade.throw_right(130, back_x_test);
             }
             else {
                 //cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
-				granade.throw_right(-1,backgroundOffsetX);
+				granade.throw_right(-1, back_x_test);
             }
            // cout << "lot granataaaaaaaaaaa" << endl;
             //cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
@@ -176,26 +177,26 @@ void MovingBackground::update() {
         else if(granade.get_Last_direction()==false) {
             if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == false) {
 
-                granade.throw_left(-1, backgroundOffsetX);
+                granade.throw_left(-1, back_x_test);
             }
             else if (main_character.movingisKeyPressedA() == true and main_character.movingisKeyPressedD() == false and main_character.isShiftPressed() == false) {
                 //cout << "adsadsadasdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" << endl;
-                granade.throw_left(150, backgroundOffsetX);
+                granade.throw_left(150, back_x_test);
             }
             else if (main_character.movingisKeyPressedA() == true and main_character.movingisKeyPressedD() == false and main_character.isShiftPressed() == true) {
-                cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
-                granade.throw_left(130, backgroundOffsetX);
+                //cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
+                granade.throw_left(130, back_x_test);
             }
             else if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == true and main_character.isShiftPressed() == false) {
-                granade.throw_left(230, backgroundOffsetX);
+                granade.throw_left(230, back_x_test);
             }
             else if (main_character.movingisKeyPressedA() == false and main_character.movingisKeyPressedD() == true and main_character.isShiftPressed() == true) {
 
-                granade.throw_left(300, backgroundOffsetX);
+                granade.throw_left(300, back_x_test);
             }
             else {
                 //cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
-                granade.throw_left(-1, backgroundOffsetX);
+                granade.throw_left(-1, back_x_test);
             }
         }
     }

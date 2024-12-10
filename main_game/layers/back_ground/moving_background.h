@@ -20,6 +20,7 @@ private:
 	sf::Texture backgroundTexture;
 	float speed = 70.0f;
 	float backgroundOffsetX = 0;
+	float back_x_test = 0;
 	float backgroudX = 0;
 	float textureWidth = 1185;
 	int max_pos = 4 * textureWidth;

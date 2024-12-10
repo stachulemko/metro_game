@@ -13,8 +13,9 @@ Granade::Granade() {
 	//"C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\artem_movmet2.png"
 	load_texture("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\artem_movmet2.png", granade_texture);
 	set_sprite(granade, granade_texture, next_x, next_y, right_upper_x, right_upper_y);
-	//load_texture("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\artem_movmet2.png", explosion_texture);
-	//set_sprite(explosion, explosion_texture, next_x_explosion, next_y_explosion, right_upper_x_explosion, right_upper_y_explosion);
+	granade.setPosition(400, 460);
+	load_texture("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\artem_movmet2.png", explosion_texture);
+	set_sprite(explosion, explosion_texture, next_x_explosion, next_y_explosion, right_upper_x_explosion, right_upper_y_explosion);
 }
 void Granade::load_texture(std::string path, sf::Texture& texture) {
 	if (!texture.loadFromFile(path)) {
@@ -25,7 +26,7 @@ void Granade::set_sprite(sf::Sprite& sprite, sf::Texture& texture,float next_x,f
 	sprite.setTexture(texture);
 	sprite.setTextureRect(sf::IntRect(right_upper_x, right_upper_y, next_x, next_y));
 	sprite.setOrigin(next_x / 2 - 10, next_y / 2); // Œrodek jako origin
-	sprite.setPosition(400, 460);
+	//sprite.setPosition(400, 460);
 
 }
 void Granade::throw_right(float speed_tmp, float offset_x) {
@@ -33,8 +34,8 @@ void Granade::throw_right(float speed_tmp, float offset_x) {
 	//cout << "elapsed time: " << elapsed.asSeconds() << endl;
 	//cout << "-------------------------------------------" << endl;
 	float deltaTime = elapsed.asSeconds();
-	cout << "deltaTime: " << deltaTime << endl;
-	cout << "granade throw right" << granade.getPosition().x << " " << granade.getPosition().y << endl;
+	//cout << "deltaTime: " << deltaTime << endl;
+	//cout << "granade throw right" << granade.getPosition().x << " " << granade.getPosition().y << endl;
 	if (speed_tmp != -1) {
 		speed_x = speed_tmp;
 	}
@@ -43,7 +44,8 @@ void Granade::throw_right(float speed_tmp, float offset_x) {
 
 	if (granade.getPosition().y > 470) {
 		is_explosion = true;
-		greande_explosion = offset_x + get_max_zasieg(speed_x, speed_y, gravity);
+		explosion_x = granade.getPosition().x;
+		explosion_y = 470;
 		granade.setPosition(400, 460);
 		is_throw = false;
 		speed_x = 200.0f;
@@ -60,7 +62,8 @@ void Granade::throw_left(float speed_tmp,float offset_x) {
 	speed_y += gravity * deltaTime; // Zastosowanie grawitacji
 	if (granade.getPosition().y > 470) {
 		is_explosion = true;
-		greande_explosion = offset_x + get_max_zasieg(speed_x, speed_y, gravity);
+		explosion_x = granade.getPosition().x;
+		explosion_y = 470;
 		granade.setPosition(400, 460);
 		is_throw = false;
 		speed_x = 200.0f;
@@ -68,22 +71,31 @@ void Granade::throw_left(float speed_tmp,float offset_x) {
 	}
 	
 }
-void Granade::render(sf::RenderWindow& window) {
+void Granade::render(	sf::RenderWindow& window) {
 	if (is_throw == true) {
 		window.draw(granade);
 
 	}
-	//show_explosion(window);
+	show_explosion(window);
 }
 double Granade::get_max_zasieg(float vx,float vy,float g) {
 	double zasieg = (2 * vx * vy) / g;
 	return zasieg;
 }
 void Granade::show_explosion(sf::RenderWindow& window) {
-	granade_exlosion_deltatime+= clock.restart().asSeconds();
+	//granade_exlosion_deltatime+= clock.restart().asSeconds();
+	//cout << "granade_exlosion_deltatime: " << granade_exlosion_deltatime << endl;
+	//cout << "-------------------granade explosion-------------------" << endl;
+	//cout << "granade explosion: " << greande_explosion << endl;
+	//cout << "-------------------granade explosion-------------------" << endl;
 	if (is_explosion == true) {
+		explosion.setPosition(explosion_x,explosion_y);
+		granade_exlosion_deltatime += clock.restart().asSeconds();
 		if (granade_exlosion_deltatime >= 1.0f) {
+			granade_exlosion_deltatime = 0;
 			is_explosion = false;
+		}
+		else {
 			window.draw(explosion);
 		}
 	}

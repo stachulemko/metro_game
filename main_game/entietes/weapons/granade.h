@@ -12,10 +12,10 @@ private:
 	int radius;
 	float speed_x;
 	float speed_y;
-	float speed_x_tmp;
-	float speed_y_tmp;
 	float gravity ;
 	bool is_throw ;
+	float explosion_x;
+	float explosion_y;
 	sf::Clock clock;
 	bool Last_direction;
 	//sf::Time deltaTime;
@@ -31,8 +31,8 @@ private:
 	float next_x_explosion=136;
 	float next_y_explosion =75;
 	//-------------------------------------
-	bool is_explosion;
-	float greande_explosion;
+	bool is_explosion=false;
+	float greande_explosion=0;
 	sf::Sprite granade;
 	sf::Sprite explosion;
 	sf::Texture granade_texture;
