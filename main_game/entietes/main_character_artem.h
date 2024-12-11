@@ -77,8 +77,8 @@ public:
 	void calculate_position_points(vector<vector<float>> positions, vector<vector<float>>& points, float upper_right_x, float upper_right_y);
 	void load_texture(string path, sf::Texture &texture);
 	void set_point(sf::Vector2f &point, float x, float y);
-	void set_sprites_texture(vector <sf::Sprite>& sprites, sf::Texture& texture, vector<vector<float>> points, float next_x, float next_y, float corrections_x, float corrections_y);
-	void set_sprite(sf::Sprite &sprite,sf::Texture &texture,sf::Vector2f point);
+	void set_sprites_texture(vector <sf::Sprite>& sprites, sf::Texture& texture, vector<vector<float>> points, float next_x, float next_y, float corrections_x, float corrections_y, float x, float y);
+	void set_sprite(sf::Sprite& sprite, sf::Texture& texture, sf::Vector2f point, float x, float y);
 	void right_move();
 	void left_move();
 	void left_run();

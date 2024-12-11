@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="main_game\entietes\main_character_artem.cpp" />
+    <ClCompile Include="main_game\entietes\piotr_adriejewicz.cpp" />
     <ClCompile Include="main_game\entietes\weapons\granade.cpp" />
     <ClCompile Include="main_game\game.cpp" />
     <ClCompile Include="main_game\game_menager\TimeManager1.cpp" />
@@ -37,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main_game\entietes\main_character_artem.h" />
+    <ClInclude Include="main_game\entietes\piotr_adriejewicz.h" />
     <ClInclude Include="main_game\entietes\weapons\granade.h" />
     <ClInclude Include="main_game\game.h" />
     <ClInclude Include="main_game\game_menager\window_scale.h" />

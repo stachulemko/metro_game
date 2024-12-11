@@ -96,7 +96,7 @@ void MovingBackground::update() {
 
             }
             else if (main_character.isLeftMousePressed() == false and main_character.isRightMousePressed() == false and main_character.is_r_pressed() == false) {
-                cout << "fuck fuck fuck" << endl;
+                //cout << "fuck fuck fuck" << endl;
                 artem.noneOfThem();
             }
 
@@ -117,7 +117,7 @@ void MovingBackground::update() {
             artem.jump_update();
             if (main_character.isRightMousePressed() == true) {
                 if (main_character.isLeftMousePressed() == true) {
-                    cout << "gowno" << endl;
+                    //cout << "gowno" << endl;
                     if (artem.get_lastDirection() == true) {
                         artem.right_shoting2();
                     }
@@ -132,7 +132,7 @@ void MovingBackground::update() {
         }
     }
     else if(main_character.get_was_q_pressed() == true and granade.get_is_throw()==false) {
-		cout << "nigerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrer" << endl;
+		//cout << "nigerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrer" << endl;
         if (artem.get_lastDirection() == true) {
             //cout << "right throw" << endl;
 			granade.set_Last_direction(true);
@@ -214,13 +214,15 @@ void MovingBackground::update() {
     backgroundSprite2.setPosition(backgroundOffsetX + textureWidth, 0);
     backgroundSprite3.setPosition(backgroundOffsetX - textureWidth, 0);
     artem.update();
+	piotr.update(back_x_test);
 };
 void MovingBackground::render(sf::RenderWindow& window) {
     
     window.draw(backgroundSprite1);
     window.draw(backgroundSprite2);
     window.draw(backgroundSprite3);
-    granade.render(window);
+    granade.render(window, back_x_test);
     artem.render(window);
+	piotr.render(window);
 	//granade.render(window);
 }

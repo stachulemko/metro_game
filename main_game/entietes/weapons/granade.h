@@ -47,7 +47,7 @@ public:
 	void set_sprite(sf::Sprite& sprite, sf::Texture& texture, float next_x, float next_y, float right_upper_x, float right_upper_y);
 	void throw_right(float speed_tmp, float offset_x);
 	void throw_left(float speed_tmp, float offset_x);
-	void render(sf::RenderWindow& window);
+	void render(sf::RenderWindow& window, float backgroundOffsetX);
 	bool& get_is_throw() { return is_throw; }
 	bool get_is_throw_value()  { return is_throw; }
 	sf::Clock& get_clock() { return clock; }
@@ -58,5 +58,5 @@ public:
 		return Last_direction;
 	}
 	double get_max_zasieg(float vx, float vy, float g);
-	void show_explosion(sf::RenderWindow& window);
+	void show_explosion(sf::RenderWindow& window, float backgroundOffsetX);
 };

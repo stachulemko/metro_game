@@ -71,18 +71,18 @@ void Granade::throw_left(float speed_tmp,float offset_x) {
 	}
 	
 }
-void Granade::render(	sf::RenderWindow& window) {
+void Granade::render(	sf::RenderWindow& window, float backgroundOffsetX) {
 	if (is_throw == true) {
 		window.draw(granade);
 
 	}
-	show_explosion(window);
+	show_explosion(window,backgroundOffsetX);
 }
 double Granade::get_max_zasieg(float vx,float vy,float g) {
 	double zasieg = (2 * vx * vy) / g;
 	return zasieg;
 }
-void Granade::show_explosion(sf::RenderWindow& window) {
+void Granade::show_explosion(sf::RenderWindow& window, float backgroundOffsetX) {
 	//granade_exlosion_deltatime+= clock.restart().asSeconds();
 	//cout << "granade_exlosion_deltatime: " << granade_exlosion_deltatime << endl;
 	//cout << "-------------------granade explosion-------------------" << endl;

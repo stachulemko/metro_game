@@ -4,6 +4,7 @@
 class Game_scene1_menager {
 private:
 	MovingBackground main_character;
+	//Piotr_Adriejewicz piotr;
 public:
 	Game_scene1_menager(float main_character_speed, float window_width, float window_height, std::string adress, float textureWidth);
 	void update();

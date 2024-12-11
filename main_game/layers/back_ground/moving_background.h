@@ -4,13 +4,14 @@
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\game_menager\TimeManager1.h>
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\main_character_artem.h>
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\weapons\granade.h>
+#include "C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\piotr_adriejewicz.h"
 #include<iostream>
 #include <vector>
 #include<string>
 using namespace std;
 class MovingBackground {
 private:
-	
+	Piotr_Adriejewicz piotr;
 	sf::Texture texture;
 	float window_width=800;
 	float window_height=600;
