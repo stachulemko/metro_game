@@ -24,9 +24,6 @@
     <ClCompile Include="main_game\game_menager\game_scene1_menager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_game\scenes\scene1_end_of_the_world.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main_game\layers\back_ground\scene1_end_of_the_world_background.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -52,6 +49,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main_game\entietes\piotr_adriejewicz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_game\scenes\scene_end_of_the_world\main_character_scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_game\scenes\scene_end_of_the_world\piotr_adriejewicz_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,6 +89,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\entietes\piotr_adriejewicz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\scenes\scene_end_of_the_world\main_character_scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\scenes\scene_end_of_the_world\piotr_adriejewicz_scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

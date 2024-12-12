@@ -37,7 +37,7 @@ private:
 	sf::Sprite explosion;
 	sf::Texture granade_texture;
 	sf::Texture explosion_texture;
-
+	float explosion_backgroundOffsetX;
 	float granade_exlosion_deltatime;
 	//sf::RectangleShape granade;
 	//

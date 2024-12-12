@@ -61,6 +61,6 @@ void Piotr_Adriejewicz::render(sf::RenderWindow& window) {
 }
 void Piotr_Adriejewicz::update(float offset_X) {
     x_pos = offset_X;
-    stand.setPosition(x_pos + 400, 450);
+    stand.setPosition(x_pos + 800, 450);
     stand.move(10, 1);
 }
