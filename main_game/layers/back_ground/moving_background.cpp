@@ -11,6 +11,8 @@ MovingBackground::MovingBackground(float main_character_speed, float window_widt
     backgroundSprite1.setTexture(backgroundTexture);
     backgroundSprite2.setTexture(backgroundTexture);
     backgroundSprite3.setTexture(backgroundTexture);
+	shape.setSize(sf::Vector2f(50, 50));
+	shape.setFillColor(sf::Color::Green);
     //textureWidth = backgroundTexture.getSize().x;
     //max_pos = 2 * textureWidth;
 }
@@ -215,6 +217,7 @@ void MovingBackground::update() {
     backgroundSprite3.setPosition(backgroundOffsetX - textureWidth, 0);
     artem.update();
 	piotr.update(back_x_test);
+	shape.setPosition(backgroudX, 450);
 };
 void MovingBackground::render(sf::RenderWindow& window) {
     
@@ -224,5 +227,6 @@ void MovingBackground::render(sf::RenderWindow& window) {
     granade.render(window, back_x_test);
     artem.render(window);
 	piotr.render(window);
+    window.draw(shape);
 	//granade.render(window);
 }

@@ -29,6 +29,7 @@ private:
 	sf::Sprite backgroundSprite1;
 	sf::Sprite backgroundSprite2;
 	sf::Sprite backgroundSprite3;
+	sf::RectangleShape shape;
 public:
 	MovingBackground(float main_character_speed, float window_width, float window_height, string adress, float textureWidth);
 	void update();
