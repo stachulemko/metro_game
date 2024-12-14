@@ -11,8 +11,6 @@ MovingBackground::MovingBackground(float main_character_speed, float window_widt
     backgroundSprite1.setTexture(backgroundTexture);
     backgroundSprite2.setTexture(backgroundTexture);
     backgroundSprite3.setTexture(backgroundTexture);
-	shape.setSize(sf::Vector2f(50, 50));
-	shape.setFillColor(sf::Color::Green);
     //textureWidth = backgroundTexture.getSize().x;
     //max_pos = 2 * textureWidth;
 }
@@ -20,17 +18,17 @@ MovingBackground::MovingBackground(float main_character_speed, float window_widt
 void MovingBackground::update() {
     //cout << backgroundOffsetX << endl;
     TimeManager1& timeManager = TimeManager1::getInstance();
-    cout << "---------------------------------------------" << endl;
-	cout << "backgroundOffsetX: " << backgroudX << endl;
-    cout << "---------------------------------------------" << endl;
+    //cout << "---------------------------------------------" << endl;
+	//cout << "backgroundOffsetX: " << backgroudX << endl;
+    //cout << "---------------------------------------------" << endl;
     back_x_test = backgroudX;
     //cout <<"niger ::" << texture.getSize().x << texture.getSize().y << endl;
     artem.get_time();
     float deltaTime = timeManager.getDeltaTime();
-    cout << "negro" << endl;
+    //cout << "negro" << endl;
     
     if (main_character.get_was_q_pressed() == false ) {
-        cout << "false false false false" << endl;
+       // cout << "false false false false" << endl;
         if (main_character.isShiftPressed()) {
             main_character.set_shift_pressed(true);
         }
@@ -217,7 +215,7 @@ void MovingBackground::update() {
     backgroundSprite3.setPosition(backgroundOffsetX - textureWidth, 0);
     artem.update();
 	piotr.update(back_x_test);
-	shape.setPosition(backgroudX, 450);
+	interaction_near_the_camp_fire.update(back_x_test, 830);
 };
 void MovingBackground::render(sf::RenderWindow& window) {
     
@@ -227,6 +225,6 @@ void MovingBackground::render(sf::RenderWindow& window) {
     granade.render(window, back_x_test);
     artem.render(window);
 	piotr.render(window);
-    window.draw(shape);
+	interaction_near_the_camp_fire.render(window);
 	//granade.render(window);
 }

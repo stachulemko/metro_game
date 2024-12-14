@@ -91,7 +91,7 @@ void Granade::show_explosion(sf::RenderWindow& window, float backgroundOffsetX) 
 	if (is_explosion == true) {
 		explosion.setPosition(explosion_x,explosion_y);
 		granade_exlosion_deltatime += clock.restart().asSeconds();
-		if (granade_exlosion_deltatime >= 1.0f) {
+		if (granade_exlosion_deltatime >= 0.1f) {
 			granade_exlosion_deltatime = 0;
 			is_explosion = false;
 		}

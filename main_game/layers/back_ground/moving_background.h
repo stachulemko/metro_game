@@ -5,12 +5,14 @@
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\main_character_artem.h>
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\weapons\granade.h>
 #include "C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\piotr_adriejewicz.h"
+#include "C:\dev\dev_c++\dev_game\metro_game\main_game\interaction.h"
 #include<iostream>
 #include <vector>
 #include<string>
 using namespace std;
 class MovingBackground {
 private:
+	Interaction interaction_near_the_camp_fire;
 	Piotr_Adriejewicz piotr;
 	sf::Texture texture;
 	float window_width=800;
@@ -29,7 +31,6 @@ private:
 	sf::Sprite backgroundSprite1;
 	sf::Sprite backgroundSprite2;
 	sf::Sprite backgroundSprite3;
-	sf::RectangleShape shape;
 public:
 	MovingBackground(float main_character_speed, float window_width, float window_height, string adress, float textureWidth);
 	void update();
