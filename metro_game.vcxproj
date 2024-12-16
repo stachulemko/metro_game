@@ -32,8 +32,9 @@
     <ClCompile Include="main_game\layers\back_ground\moving_background.cpp" />
     <ClCompile Include="main_game\layers\back_ground\scene1_end_of_the_world_background.cpp" />
     <ClCompile Include="main_game\mechanics\moving_main_character.cpp" />
+    <ClCompile Include="main_game\scenes\dialogue.cpp" />
+    <ClCompile Include="main_game\scenes\scene.cpp" />
     <ClCompile Include="main_game\scenes\scene_end_of_the_world\main_character_scene.cpp" />
-    <ClCompile Include="main_game\scenes\scene_end_of_the_world\near_the_camp_fire\camp_fire.cpp" />
     <ClCompile Include="main_game\scenes\scene_end_of_the_world\piotr_adriejewicz_scene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -50,8 +51,9 @@
     <ClInclude Include="main_game\layers\back_ground\moving_background.h" />
     <ClInclude Include="main_game\layers\back_ground\scene1_end_of_the_world_background.h" />
     <ClInclude Include="main_game\mechanics\moving_main_character.h" />
+    <ClInclude Include="main_game\scenes\dialogue.h" />
+    <ClInclude Include="main_game\scenes\scene.h" />
     <ClInclude Include="main_game\scenes\scene_end_of_the_world\main_character_scene.h" />
-    <ClInclude Include="main_game\scenes\scene_end_of_the_world\near_the_camp_fire\camp_fire.h" />
     <ClInclude Include="main_game\scenes\scene_end_of_the_world\piotr_adriejewicz_scene.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
