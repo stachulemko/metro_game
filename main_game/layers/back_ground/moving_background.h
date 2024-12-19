@@ -12,7 +12,7 @@
 using namespace std;
 class MovingBackground {
 private:
-	//Interaction interaction_near_the_camp_fire;
+	Interaction interaction_near_the_camp_fire;
 	Piotr_Adriejewicz piotr;
 	sf::Texture texture;
 	float window_width=800;

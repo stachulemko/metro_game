@@ -215,7 +215,8 @@ void MovingBackground::update() {
     backgroundSprite3.setPosition(backgroundOffsetX - textureWidth, 0);
     artem.update();
 	piotr.update(back_x_test);
-	//interaction_near_the_camp_fire.update(back_x_test, 830);
+	interaction_near_the_camp_fire.update(back_x_test, 830);
+	interaction_near_the_camp_fire.if_ineraction();
 };
 void MovingBackground::render(sf::RenderWindow& window) {
     
@@ -225,6 +226,6 @@ void MovingBackground::render(sf::RenderWindow& window) {
     granade.render(window, back_x_test);
     artem.render(window);
 	piotr.render(window);
-	//interaction_near_the_camp_fire.render(window);
+	interaction_near_the_camp_fire.render(window);
 	//granade.render(window);
 }

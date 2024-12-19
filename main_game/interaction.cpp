@@ -47,6 +47,7 @@ void Interaction::render(sf::RenderWindow& window) {
 void Interaction::if_ineraction() {
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
 		if (InRange(-480, -580,offset_x_tmp)) {
+			//cout << "dassssssssssssddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" << endl;
 			read.read_conversation();
 			//dialogue.Dialogue_2_objects(dialogue.get_main_character_scene(), dialogue.get_piotr_adriejewicz_scene());
 		}

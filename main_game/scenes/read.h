@@ -13,7 +13,7 @@ private:
     sf::Sound sound;
 public:
     Read();
-    void speach_SoundBuffer(sf::SoundBuffer &buffer);
+    void speach_SoundBuffer();
 	int number_of_files(string folder_path);
     void read_conversation();
 };
