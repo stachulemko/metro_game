@@ -60,10 +60,10 @@
     <ClCompile Include="main_game\scenes\scene_end_of_the_world\piotr_adriejewicz_scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_game\scenes\dialogue.cpp">
+    <ClCompile Include="main_game\scenes\scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_game\scenes\scene.cpp">
+    <ClCompile Include="main_game\scenes\read.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -109,10 +109,10 @@
     <ClInclude Include="main_game\scenes\scene_end_of_the_world\piotr_adriejewicz_scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main_game\scenes\dialogue.h">
+    <ClInclude Include="main_game\scenes\scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main_game\scenes\scene.h">
+    <ClInclude Include="main_game\scenes\read.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

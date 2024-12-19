@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+//#include "C:\dev\dev_c++\dev_game\metro_game\main_game\scenes\dialogue.h"
 #include<iostream>
+#include "C:\dev\dev_c++\dev_game\metro_game\main_game\scenes\read.h"
 using namespace std;
 class Interaction {
 private:
@@ -8,6 +10,8 @@ private:
 	sf::Sprite interaction;
 	float offset_x_tmp;
 	sf::RectangleShape shape;
+	Read read;
+	//Dialogue dialogue;
 public:
 	Interaction();
 	float pos_x(float offset_x, float x);
@@ -16,5 +20,6 @@ public:
 	void display_iteraction(float x1, float x2, float offset_x, sf::RenderWindow& window);
 	void update(float offset_X, float x);
 	void render(sf::RenderWindow& window);
+	void if_ineraction();
 
 };

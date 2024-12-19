@@ -44,3 +44,11 @@ void Interaction::update(float offset_X ,float x) {
 void Interaction::render(sf::RenderWindow& window) {
 	display_iteraction( -480,-580,offset_x_tmp, window);
 }
+void Interaction::if_ineraction() {
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
+		if (InRange(-480, -580,offset_x_tmp)) {
+			read.read_conversation();
+			//dialogue.Dialogue_2_objects(dialogue.get_main_character_scene(), dialogue.get_piotr_adriejewicz_scene());
+		}
+	}
+}
