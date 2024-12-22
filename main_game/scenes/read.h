@@ -1,19 +1,24 @@
-#pragma once
-#include "iostream"
-#include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <iostream>
 #include <filesystem>
+#include <thread>
+#include <regex>
+#include <algorithm>
+
 namespace fs = std::filesystem;
-using namespace std;
+
 class Read {
-private:
-    vector<string>conversation_paths;
-    string path_folder_with_conversation;
-    sf::Sound sound;
 public:
     Read();
-    void speach_SoundBuffer();
-	int number_of_files(string folder_path);
     void read_conversation();
+    void play_sound(const std::string& path);
+	bool get_conversation_started() { return conversation_started; }
+
+private:
+    std::string path_folder_with_conversation;
+    std::vector<std::string> conversation_paths;
+    bool conversation_started;
+    static bool compare_paths(const std::string& a, const std::string& b);
+
 };

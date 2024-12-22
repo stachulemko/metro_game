@@ -66,6 +66,9 @@
     <ClCompile Include="main_game\scenes\read.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_game\scenes\writings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="map.png">
@@ -113,6 +116,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\scenes\read.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\scenes\writings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

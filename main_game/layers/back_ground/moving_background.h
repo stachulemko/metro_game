@@ -6,12 +6,14 @@
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\weapons\granade.h>
 #include "C:\dev\dev_c++\dev_game\metro_game\main_game\entietes\piotr_adriejewicz.h"
 #include "C:\dev\dev_c++\dev_game\metro_game\main_game\interaction.h"
+#include "C:\dev\dev_c++\dev_game\metro_game\main_game\scenes\writings.h"
 #include<iostream>
 #include <vector>
 #include<string>
 using namespace std;
 class MovingBackground {
 private:
+	Writtings writtings;
 	Interaction interaction_near_the_camp_fire;
 	Piotr_Adriejewicz piotr;
 	sf::Texture texture;
