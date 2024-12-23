@@ -14,7 +14,7 @@ Writtings::Writtings() {
     text.setCharacterSize(20);
     text.setFillColor(sf::Color::White);
     text.setStyle(sf::Text::Bold);
-    text.setPosition(200, 250);
+    text.setPosition(200, 550);
 
     // Odczyt nazw plików z folderu
     if (fs::exists(folder_path) && fs::is_directory(folder_path)) {
@@ -84,7 +84,7 @@ void Writtings::conversation_text() {
 
 
                 // Wyci¹gniêcie nazwy bohatera (z nazwy pliku)
-                string name = vec[iterator_path].substr(0, vec[iterator_path].find_last_of('.'));
+                string name = vec[iterator_path].substr(0, vec[iterator_path].size()-5);
                 speaches = wrapText(content, name);
             }
             else {
@@ -109,7 +109,10 @@ void Writtings::update() {
     if (!vec.empty() && iterator_path <= vec.size()) {
         deltaTime = clock.getElapsedTime();
 		cout << deltaTime.asSeconds() << endl;
-        if (deltaTime.asSeconds() >= 4) {  // Odstêp czasowy 6 sekund
+        if (iterator == 4) {
+            time = 5;
+        }
+        if (deltaTime.asSeconds() >= time) {  // Odstêp czasowy 6 sekund
             clock.restart();
 
             // Pobranie aktualnego tekstu do wyœwietlenia

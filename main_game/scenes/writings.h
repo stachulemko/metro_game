@@ -28,6 +28,7 @@ private:
     size_t iterator = 0;
     size_t iterator_path = 0;
     bool is_draw = false;
+    float time=2.5;
 
     int extractLastNumber(const fs::path& filePath);
     vector<string> wrapText(string napis, string name);
