@@ -69,6 +69,21 @@
     <ClCompile Include="main_game\scenes\writings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_game\metro_station\weapons\AntiAircraftGun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_game\metro_station\wogn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_game\metro_station\defence\bagWithSand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_game\metro_station\defence\tent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_game\metro_station\defence\metro_train.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="map.png">
@@ -119,6 +134,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\scenes\writings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\metro_station\weapons\AntiAircraftGun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\metro_station\wogn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\metro_station\defence\bagWithSand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\metro_station\defence\tent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\metro_station\defence\metro_train.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\global_pos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -37,15 +37,19 @@ bool Interaction::InRange(float x1, float x2, float curr_pos) {
 void Interaction::display_iteraction(float x1, float x2, float offset_x, sf::RenderWindow& window) {
     if (InRange(x1, x2, offset_x) && get_interaction_flaga() == false) {
         window.draw(interaction);
+        IsInteraction = true;
     }
+	else {
+		IsInteraction = false;
+	}
 }
 
 void Interaction::update(float offset_X, float x) {
     offset_x_tmp = offset_X;
     interaction.setPosition(offset_X + x, 260);
 }
-
-void Interaction::render(sf::RenderWindow& window) {
+// -480 -580
+void Interaction::render(sf::RenderWindow& window,float x1,float x2) {
     display_iteraction(-480, -580, offset_x_tmp, window);
     //std::lock_guard<std::mutex> lock(mtx);
     //writtings.render(window);
@@ -59,6 +63,17 @@ void Interaction::if_ineraction() {
             //conversation_thread.detach();
         }
     }
+}
+bool Interaction::if_ineraction(float pos_x1, float pos_x2) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
+        if (InRange(pos_x1, pos_x2, offset_x_tmp)) {
+			return true;
+            //read.read_conversation();
+            //std::thread conversation_thread(&Writtings::conversation_text, &writtings);
+            //conversation_thread.detach();
+        }
+    }
+	return false;
 }
 
 bool Interaction::get_interaction_flaga() {

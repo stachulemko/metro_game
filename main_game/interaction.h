@@ -11,6 +11,7 @@ private:
 	sf::Texture texture;
 	sf::Sprite interaction;
 	//Writtings writtings;
+	bool IsInteraction = false;
 	//bool interaction_flaga = false;
 	float offset_x_tmp;
 	sf::RectangleShape shape;
@@ -23,8 +24,15 @@ public:
 	bool InRange(float x1, float x2, float curr_pos);
 	void display_iteraction(float x1, float x2, float offset_x, sf::RenderWindow& window);
 	void update(float offset_X, float x);
-	void render(sf::RenderWindow& window);
+	void render(sf::RenderWindow& window, float x1, float x2);
 	void if_ineraction();
+	bool if_ineraction(float pos_x1,float pos_x2);
 	bool get_interaction_flaga();
+	bool get_IsInteraction() {
+		return IsInteraction;
+	}
+	void set_interaction_flaga(bool flaga) {
+		IsInteraction = flaga;
+	}
 
 };

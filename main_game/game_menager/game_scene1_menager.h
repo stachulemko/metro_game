@@ -1,9 +1,11 @@
 #pragma once
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\layers\back_ground\moving_background.h>
+#include "C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\global_pos.h"
 #include <string>
 class Game_scene1_menager {
 private:
 	MovingBackground main_character;
+
 	//Piotr_Adriejewicz piotr;
 public:
 	Game_scene1_menager(float main_character_speed, float window_width, float window_height, std::string adress, float textureWidth);

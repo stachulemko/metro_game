@@ -6,6 +6,7 @@ Game_scene1_menager::Game_scene1_menager(float main_character_speed, float windo
 
 void Game_scene1_menager::update() {
     //main_character.
+    
     main_character.update();
 }
 

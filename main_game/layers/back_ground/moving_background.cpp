@@ -11,11 +11,11 @@ MovingBackground::MovingBackground(float main_character_speed, float window_widt
     backgroundSprite1.setTexture(backgroundTexture);
     backgroundSprite2.setTexture(backgroundTexture);
     backgroundSprite3.setTexture(backgroundTexture);
-    //textureWidth = backgroundTexture.getSize().x;
     //max_pos = 2 * textureWidth;
 }
 
 void MovingBackground::update() {
+    //textureWidth = backgroundTexture.getSize().x;
     //cout << backgroundOffsetX << endl;
 	if (interaction_near_the_camp_fire.get_interaction_flaga() == false) {
         TimeManager1& timeManager = TimeManager1::getInstance();
@@ -214,10 +214,12 @@ void MovingBackground::update() {
         backgroundSprite1.setPosition(backgroundOffsetX, 0);
         backgroundSprite2.setPosition(backgroundOffsetX + textureWidth, 0);
         backgroundSprite3.setPosition(backgroundOffsetX - textureWidth, 0);
+        wogn.update(back_x_test);
         artem.update();
         piotr.update(back_x_test);
         interaction_near_the_camp_fire.update(back_x_test, 830);
         interaction_near_the_camp_fire.if_ineraction();
+        
 	}
     else {
         writtings.update();
@@ -231,9 +233,11 @@ void MovingBackground::render(sf::RenderWindow& window) {
     window.draw(backgroundSprite2);
     window.draw(backgroundSprite3);
     granade.render(window, back_x_test);
+    wogn.render(window);
     artem.render(window);
 	piotr.render(window);
-	interaction_near_the_camp_fire.render(window);
+	interaction_near_the_camp_fire.render(window,-480,-500);
 	writtings.render(window);
+	
 	//granade.render(window);
 }
