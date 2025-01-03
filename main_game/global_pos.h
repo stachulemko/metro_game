@@ -7,6 +7,9 @@ private:
 	float pos_x;
 	float pos_y;
 public:
+	GlobalPos() {
+
+	}
 	float get_global_pos_x() {
 		return moving_bac.get_offset();
 	}

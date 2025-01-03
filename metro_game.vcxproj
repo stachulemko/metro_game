@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="main_game\enterance.cpp" />
     <ClCompile Include="main_game\entietes\main_character_artem.cpp" />
     <ClCompile Include="main_game\entietes\piotr_adriejewicz.cpp" />
     <ClCompile Include="main_game\entietes\weapons\granade.cpp" />
@@ -47,6 +48,7 @@
     <Image Include="map.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="main_game\enterance.h" />
     <ClInclude Include="main_game\entietes\main_character_artem.h" />
     <ClInclude Include="main_game\entietes\piotr_adriejewicz.h" />
     <ClInclude Include="main_game\entietes\weapons\granade.h" />

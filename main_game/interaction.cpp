@@ -37,6 +37,7 @@ bool Interaction::InRange(float x1, float x2, float curr_pos) {
 void Interaction::display_iteraction(float x1, float x2, float offset_x, sf::RenderWindow& window) {
     if (InRange(x1, x2, offset_x) && get_interaction_flaga() == false) {
         window.draw(interaction);
+		cout << "Interaction" << endl;
         IsInteraction = true;
     }
 	else {
@@ -44,13 +45,13 @@ void Interaction::display_iteraction(float x1, float x2, float offset_x, sf::Ren
 	}
 }
 
-void Interaction::update(float offset_X, float x) {
+void Interaction::update(float offset_X, float x,float y) {
     offset_x_tmp = offset_X;
-    interaction.setPosition(offset_X + x, 260);
+    interaction.setPosition(offset_X + x, y);
 }
 // -480 -580
 void Interaction::render(sf::RenderWindow& window,float x1,float x2) {
-    display_iteraction(-480, -580, offset_x_tmp, window);
+    display_iteraction(x1, x2, offset_x_tmp, window);
     //std::lock_guard<std::mutex> lock(mtx);
     //writtings.render(window);
 }

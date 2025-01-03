@@ -1,5 +1,7 @@
 #include "moving_background.h"
+MovingBackground::MovingBackground() {
 
+}
 MovingBackground::MovingBackground(float main_character_speed, float window_width, float window_height, string back_ground_adress, float textureWidth) {
     this->textureWidth = textureWidth;
     //speed = main_character_speed;
@@ -217,7 +219,7 @@ void MovingBackground::update() {
         wogn.update(back_x_test);
         artem.update();
         piotr.update(back_x_test);
-        interaction_near_the_camp_fire.update(back_x_test, 830);
+        interaction_near_the_camp_fire.update(back_x_test, 830,260);
         interaction_near_the_camp_fire.if_ineraction();
         
 	}
@@ -236,7 +238,7 @@ void MovingBackground::render(sf::RenderWindow& window) {
     wogn.render(window);
     artem.render(window);
 	piotr.render(window);
-	interaction_near_the_camp_fire.render(window,-480,-500);
+	interaction_near_the_camp_fire.render(window,-480,-580);
 	writtings.render(window);
 	
 	//granade.render(window);

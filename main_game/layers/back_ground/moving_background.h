@@ -37,6 +37,7 @@ private:
     sf::Sprite backgroundSprite2;
     sf::Sprite backgroundSprite3;
 public:
+    MovingBackground();
     MovingBackground(float main_character_speed, float window_width, float window_height, string adress, float textureWidth);
     void update();
     void render(sf::RenderWindow& window);

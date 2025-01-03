@@ -23,7 +23,7 @@ public:
 	sf::Vector2f Range(float x, float offset_x, float range);
 	bool InRange(float x1, float x2, float curr_pos);
 	void display_iteraction(float x1, float x2, float offset_x, sf::RenderWindow& window);
-	void update(float offset_X, float x);
+	void update(float offset_X, float x,float y);
 	void render(sf::RenderWindow& window, float x1, float x2);
 	void if_ineraction();
 	bool if_ineraction(float pos_x1,float pos_x2);
