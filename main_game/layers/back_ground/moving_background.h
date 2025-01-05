@@ -49,8 +49,8 @@ public:
         sprites.push_back(backgroundSprite3);
         return sprites;
     }
-    int get_offset() {
-        return backgroudX;
+    float get_offset() {
+        return back_x_test;
     }
 };
 

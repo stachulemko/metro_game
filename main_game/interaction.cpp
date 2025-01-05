@@ -5,9 +5,13 @@
 std::mutex mtx;
 
 Interaction::Interaction() {
+    cout << "asdasddasdasdasdasdsadasdasdasdkjkk[olooljjorjojodnjdvjibefjbvdjnjvnfkjebkb efdsnv lfnbjvVN" << endl;
     if (!texture.loadFromFile("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\pixel1.png")) {
+        
         std::cout << "Error: Could not load texture piotr andrijewicz" << std::endl;
+       
     }
+    cout << "asdasddasdasdasdasdsadasdasdasdkjkk[olooljjorjojodnjdvjibefjbvdjnjvnfkjebkb efdsnv lfnbjvVN" << endl;
     interaction.setTexture(texture);
     interaction.setPosition(0, 0);
     interaction.setScale(2.0f, 2.0f);
@@ -48,6 +52,7 @@ void Interaction::display_iteraction(float x1, float x2, float offset_x, sf::Ren
 void Interaction::update(float offset_X, float x,float y) {
     offset_x_tmp = offset_X;
     interaction.setPosition(offset_X + x, y);
+	cout << interaction.getPosition().x << endl;
 }
 // -480 -580
 void Interaction::render(sf::RenderWindow& window,float x1,float x2) {

@@ -34,5 +34,10 @@ public:
 	void set_interaction_flaga(bool flaga) {
 		IsInteraction = flaga;
 	}
-
+	float get_offset_x_tmp() {
+		return offset_x_tmp;
+	}
+	float get_interaction_pos_x() {
+		return interaction.getPosition().x;
+	}
 };
