@@ -14,17 +14,22 @@ private:
 	bool IsInteraction = false;
 	//bool interaction_flaga = false;
 	float offset_x_tmp;
+	float show_position_x=0;
+	float show_position_y=0;
+	float interaction_pos_x1=0;
+	float interaction_pos_x2=0;
 	sf::RectangleShape shape;
 	Read read;
 	//Dialogue dialogue;
 public:
-	Interaction();
+	//Interaction();
+	Interaction(float show_position_x, float show_position_y, float interaction_pos_x1, float interaction_pos_x2);
 	float pos_x(float offset_x, float x);
 	sf::Vector2f Range(float x, float offset_x, float range);
 	bool InRange(float x1, float x2, float curr_pos);
 	void display_iteraction(float x1, float x2, float offset_x, sf::RenderWindow& window);
-	void update(float offset_X, float x,float y);
-	void render(sf::RenderWindow& window, float x1, float x2);
+	void update(float offset_X);
+	void render(sf::RenderWindow& window);
 	void if_ineraction();
 	bool if_ineraction(float pos_x1,float pos_x2);
 	bool get_interaction_flaga();

@@ -17,6 +17,7 @@ class MovingBackground {
 private:
     Wogn wogn;
     Writtings writtings; // Dodano brakuj¹cy œrednik
+    Interaction interaction_enter_the_train;
     Interaction interaction_near_the_camp_fire;
     Piotr_Adriejewicz piotr;
     sf::Texture texture;

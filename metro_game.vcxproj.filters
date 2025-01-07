@@ -84,6 +84,9 @@
     <ClCompile Include="main_game\metro_station\defence\metro_train.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_game\interactions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="map.png">
@@ -152,6 +155,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\global_pos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\interactions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
