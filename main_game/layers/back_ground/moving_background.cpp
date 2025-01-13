@@ -1,14 +1,12 @@
 #include "moving_background.h"
 
 MovingBackground::MovingBackground()
-    : interaction_near_the_camp_fire(830, 260, -480, -580),
-    interaction_enter_the_train(1200, 260, -700, -800) {
+    : interaction_near_the_camp_fire(830, 260, -480, -580) {
     std::cout << "MovingBackground default constructor called" << std::endl;
 }
 
 MovingBackground::MovingBackground(float main_character_speed, float window_width, float window_height, std::string back_ground_adress, float textureWidth)
-    : interaction_near_the_camp_fire(830, 260, -480, -580),
-    interaction_enter_the_train(1200, 260, -700, -800) {
+    : interaction_near_the_camp_fire(830, 260, -480, -580){
     this->textureWidth = textureWidth;
     this->window_width = window_width;
     this->window_height = window_height;
@@ -175,8 +173,8 @@ void MovingBackground::update() {
         artem.update();
         piotr.update(back_x_test);
         interaction_near_the_camp_fire.update(back_x_test);
-        interaction_enter_the_train.update(back_x_test);
-        interaction_near_the_camp_fire.if_ineraction();
+        //interaction_enter_the_train.update(back_x_test);
+        interaction_near_the_camp_fire.if_interaction();
         
     }
     else {
@@ -193,7 +191,7 @@ void MovingBackground::render(sf::RenderWindow& window) {
     artem.render(window);
     piotr.render(window);
     interaction_near_the_camp_fire.render(window);
-    interaction_enter_the_train.render(window);
+    //interaction_enter_the_train.render(window);
     writtings.render(window);
     
 }

@@ -9,6 +9,8 @@ private:
 
 
 	MovingBackground main_character;
+	MovingBackground inside_train;
+	Interaction interaction_enter_the_train;
 	//MovingBackground main_character_inside_train;
 	//Enterance enterance;
 	//Piotr_Adriejewicz piotr;

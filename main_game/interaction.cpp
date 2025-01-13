@@ -93,7 +93,7 @@ void Interaction::render(sf::RenderWindow& window) {
     //writtings.render(window);
 }
 
-void Interaction::if_ineraction() {
+void Interaction::if_interaction() {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
         if (InRange(interaction_pos_x1, interaction_pos_x2, offset_x_tmp)) {
             read.read_conversation();
@@ -102,17 +102,17 @@ void Interaction::if_ineraction() {
         }
     }
 }
-bool Interaction::if_ineraction(float pos_x1, float pos_x2) {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
-        if (InRange(pos_x1, pos_x2, offset_x_tmp)) {
-			return true;
-            //read.read_conversation();
-            //std::thread conversation_thread(&Writtings::conversation_text, &writtings);
-            //conversation_thread.detach();
+void Interaction::if_interaction_flag() {
+    bool current_interaction_flag = sf::Keyboard::isKeyPressed(sf::Keyboard::T);
+    if (current_interaction_flag && !previous_interaction_flag) {
+        if (InRange(interaction_pos_x1, interaction_pos_x2, offset_x_tmp)) {
+            is_inside = !is_inside;
+            std::cout << "Interaction detected!" << std::endl;
         }
     }
-	return false;
+    previous_interaction_flag = current_interaction_flag;
 }
+
 
 bool Interaction::get_interaction_flaga() {
     return read.get_conversation_started();
