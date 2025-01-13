@@ -8,7 +8,7 @@ Game_scene1_menager::Game_scene1_menager(float main_character_speed, float windo
 
 void Game_scene1_menager::update() {
     if (interaction_enter_the_train.get_is_inside() == true) {
-       
+        inside_train.update();
     }
     else {
         main_character.update();
@@ -21,7 +21,7 @@ void Game_scene1_menager::update() {
 void Game_scene1_menager::render(sf::RenderWindow& window) {
     //enterance.render(window);
     if (interaction_enter_the_train.get_is_inside() == true) {
-
+        inside_train.render(window);
     }
     else {
         main_character.render(window);

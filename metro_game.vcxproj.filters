@@ -87,6 +87,9 @@
     <ClCompile Include="main_game\interactions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_game\scenes\shop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="map.png">
@@ -158,6 +161,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main_game\interactions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game\scenes\shop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

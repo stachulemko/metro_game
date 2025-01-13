@@ -42,6 +42,7 @@
     <ClCompile Include="main_game\scenes\scene.cpp" />
     <ClCompile Include="main_game\scenes\scene_end_of_the_world\main_character_scene.cpp" />
     <ClCompile Include="main_game\scenes\scene_end_of_the_world\piotr_adriejewicz_scene.cpp" />
+    <ClCompile Include="main_game\scenes\shop.cpp" />
     <ClCompile Include="main_game\scenes\writings.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +70,7 @@
     <ClInclude Include="main_game\scenes\scene.h" />
     <ClInclude Include="main_game\scenes\scene_end_of_the_world\main_character_scene.h" />
     <ClInclude Include="main_game\scenes\scene_end_of_the_world\piotr_adriejewicz_scene.h" />
+    <ClInclude Include="main_game\scenes\shop.h" />
     <ClInclude Include="main_game\scenes\writings.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
