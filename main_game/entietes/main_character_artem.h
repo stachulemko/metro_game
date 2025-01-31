@@ -59,7 +59,7 @@ private:
 	vector<sf::Sprite> runningSprites;
 	vector<sf::Sprite> shotingSpritesShoting1;
 	vector<sf::Sprite> shotingSpritesShoting2;
-	vector<sf::Sprite> reload_sprites;
+	vector<sf::Sprite> reload_sprites; 
 	//-------------------------------------
 	sf::Vector2f stayed_point;
 	sf::Vector2f shoting2_point;
@@ -110,7 +110,16 @@ public:
 	int get_current_frame() {
 		return currentFrame;
 	}
-	
+	void move_spriteMovment(float speed_x,float deltatime) {
+		sprite_tmp.move(speed_x * deltatime,0.0f);
+
+	}
+	void set_position_sprite_tmp(float x,float y) {
+		sprite_tmp.setPosition(x, y);
+	}
+	float get_sprite_tmp_position() {
+		return sprite_tmp.getPosition().x;
+	}
 
 
 };

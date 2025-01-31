@@ -2,6 +2,7 @@
 #include <C:\dev\dev_c++\dev_game\metro_game\main_game\layers\back_ground\moving_background.h>
 #include "C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\global_pos.h"
 #include "C:\dev\dev_c++\dev_game\metro_game\main_game\interaction.h"
+#include "C:\dev\dev_c++\dev_game\metro_game\main_game\scenes\shop.h"
 //#include "C:\dev\dev_c++\dev_game\metro_game\main_game\enterance.h"
 #include <string>
 class Game_scene1_menager {
@@ -11,6 +12,7 @@ private:
 	MovingBackground main_character;
 	MovingBackground inside_train;
 	Interaction interaction_enter_the_train;
+	Shop shop;
 	//MovingBackground main_character_inside_train;
 	//Enterance enterance;
 	//Piotr_Adriejewicz piotr;

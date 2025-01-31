@@ -3,12 +3,13 @@
 Game_scene1_menager::Game_scene1_menager(float main_character_speed, float window_width, float window_height, string adress, float textureWidth)
     : main_character(main_character_speed, window_width, window_height, adress, textureWidth),
      interaction_enter_the_train(5900,260,-5480,-5580),
-     inside_train(200, 800, 600, "C:\\Users\\KêpkaStanis³aw\\Downloads\\pixel_art_subway.png", 1185){
+     inside_train(200, 800, 600, "C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\metro_inside.png", 1185),
+     shop("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\shop.jpg", "C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\rust.jpg","C:\\dev\dev_c++\\dev_game\\metro_game\\main_game\\assets\\weapons4.jpg" ,50) {
 }
 
 void Game_scene1_menager::update() {
     if (interaction_enter_the_train.get_is_inside() == true) {
-        inside_train.update();
+        shop.update();
     }
     else {
         main_character.update();
@@ -21,7 +22,7 @@ void Game_scene1_menager::update() {
 void Game_scene1_menager::render(sf::RenderWindow& window) {
     //enterance.render(window);
     if (interaction_enter_the_train.get_is_inside() == true) {
-        inside_train.render(window);
+        shop.render(window);
     }
     else {
         main_character.render(window);

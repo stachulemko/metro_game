@@ -5,7 +5,7 @@ Main_character_artem::Main_character_artem() {
     moveSprites.resize(4);
     calculate_position_points(positions_moves,move_points,upper_right_difference_x,upper_right_difference_y);
     load_texture("C:\\dev\\dev_c++\\dev_game\\TestGame2\\all6.png", all_basic_artem);
-    set_sprites_texture(moveSprites, all_basic_artem, move_points, next_x, next_y,10,0,400,470);
+    set_sprites_texture(moveSprites,  all_basic_artem, move_points, next_x, next_y,10,0,400,470);
     //---------------------------------
     set_point(stayed_point, 337, 27);
 	set_sprite(sprite_stand, all_basic_artem, stayed_point,400,470);
