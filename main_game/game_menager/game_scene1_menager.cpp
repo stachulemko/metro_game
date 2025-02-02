@@ -4,7 +4,7 @@ Game_scene1_menager::Game_scene1_menager(float main_character_speed, float windo
     : main_character(main_character_speed, window_width, window_height, adress, textureWidth),
      interaction_enter_the_train(5900,260,-5480,-5580),
      inside_train(200, 800, 600, "C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\metro_inside.png", 1185),
-     shop("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\shop.jpg", "C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\rust.jpg","C:\\dev\dev_c++\\dev_game\\metro_game\\main_game\\assets\\weapons4.jpg" ,50) {
+     shop("C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\shop.jpg", "C:\\dev\\dev_c++\\dev_game\\metro_game\\main_game\\assets\\rust.jpg","C:\\dev\dev_c++\\dev_game\\metro_game\\main_game\\assets\\guns.png" ,50) {
 }
 
 void Game_scene1_menager::update() {
